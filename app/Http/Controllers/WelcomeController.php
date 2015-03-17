@@ -1,4 +1,4 @@
-<?php namespace App\Http\Controllers;
+<?php namespace rhwilr\mcUserAdminPortal\Http\Controllers;
 
 class WelcomeController extends Controller {
 

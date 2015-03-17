@@ -1,4 +1,4 @@
-<?php namespace App;
+<?php namespace rhwilr\mcUserAdminPortal;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

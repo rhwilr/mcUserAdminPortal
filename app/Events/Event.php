@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace rhwilr\mcUserAdminPortal\Events;
 
 abstract class Event {
 

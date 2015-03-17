@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace rhwilr\mcUserAdminPortal\Commands;
 
 abstract class Command {
 

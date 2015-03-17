@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: App
-        psr4_prefix: App
+        namespace: rhwilr\mcUserAdminPortal
+        psr4_prefix: rhwilr\mcUserAdminPortal
         src_path: app
