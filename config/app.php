@@ -137,6 +137,18 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		/*
+		 * Vendor Service Providers...
+		 */
+		'Illuminate\Html\HtmlServiceProvider',
+		'McCool\LaravelAutoPresenter\LaravelAutoPresenterServiceProvider',
+		'Cartalyst\Sentry\SentryServiceProvider',
+		'GrahamCampbell\Core\CoreServiceProvider',
+		'GrahamCampbell\Security\SecurityServiceProvider',
+		'GrahamCampbell\Binput\BinputServiceProvider',
+		'GrahamCampbell\Throttle\ThrottleServiceProvider',
+		'GrahamCampbell\Credentials\CredentialsServiceProvider',
+
+		/*
 		 * Application Service Providers...
 		 */
 		'rhwilr\mcUserAdminPortal\Providers\AppServiceProvider',
@@ -193,6 +205,14 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		/*
+		 * Vendor Aliases...
+		 */
+		'Form'=> 'Illuminate\Html\FormFacade',
+		'HTML'=> 'Illuminate\Html\HtmlFacade',
+		'UserProvider' => 'GrahamCampbell\Credentials\Facades\UserProvider',
+		'GroupProvider' => 'GrahamCampbell\Credentials\Facades\GroupProvider',
+		'Credentials' => 'GrahamCampbell\Credentials\Facades\Credentials'
 	],
 
 ];
