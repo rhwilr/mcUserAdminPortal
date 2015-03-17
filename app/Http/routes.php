@@ -11,4 +11,11 @@
 |
 */
 
-Route::get('/', 'WelcomeController@index');
+// send users to the home page
+$router->get('/', ['as' => 'base', function () {
+    Session::flash('', ''); // work around laravel bug if there is no session yet
+    Session::reflash();
+    return Redirect::to(Config::get('core.home', 'pages/home'));
+}]);
+
+$router->resource('pages', 'PageController');
