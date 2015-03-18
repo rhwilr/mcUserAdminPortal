@@ -19,7 +19,7 @@ return array(
     | the role if it is in a different namespace.
     |
     */
-    'role' => '\Models\Role',
+    'role' => 'rhwilr\mcUserAdminPortal\Models\Role',
 
     /*
     |--------------------------------------------------------------------------
@@ -40,7 +40,7 @@ return array(
     | Update the permission if it is in a different namespace.
     |
     */
-    'permission' => '\Models\Permission',
+    'permission' => 'rhwilr\mcUserAdminPortal\Models\Permission',
 
     /*
     |--------------------------------------------------------------------------

@@ -14,7 +14,9 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('rhwilr\mcUserAdminPortal\Seeds\UserTableSeeder');
+		$this->call('rhwilr\mcUserAdminPortal\Seeds\RoleTableSeeder');
+		$this->call('rhwilr\mcUserAdminPortal\Seeds\PermissionTableSeeder');
 	}
 
 }
