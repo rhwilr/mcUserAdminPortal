@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use Illuminate\Database\Eloquent\Model as Eloquent;
+use Illuminate\Database\Eloquent\Model;
 
 class DatabaseSeeder extends Seeder {
 
@@ -12,11 +12,9 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		Eloquent::unguard();
+		Model::unguard();
 
-		$this->call('rhwilr\mcUserAdminPortal\Seeds\GroupsTableSeeder');
-		$this->call('rhwilr\mcUserAdminPortal\Seeds\UsersTableSeeder');
-		$this->call('rhwilr\mcUserAdminPortal\Seeds\UsersGroupsTableSeeder');
+		// $this->call('UserTableSeeder');
 	}
 
 }

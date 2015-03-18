@@ -1,8 +1,6 @@
 <?php namespace rhwilr\mcUserAdminPortal\Providers;
 
-use rhwilr\mcUserAdminPortal\Http\Controllers\PageController;
 use Illuminate\Support\ServiceProvider;
-
 
 class AppServiceProvider extends ServiceProvider {
 
@@ -19,39 +17,18 @@ class AppServiceProvider extends ServiceProvider {
 	/**
 	 * Register any application services.
 	 *
+	 * This service provider is a great spot to register your various container
+	 * bindings with the application. As you can see, we are registering our
+	 * "Registrar" implementation here. You can add your own bindings too!
+	 *
 	 * @return void
 	 */
 	public function register()
 	{
-		$this->registerPageController();
+		$this->app->bind(
+			'Illuminate\Contracts\Auth\Registrar',
+			'rhwilr\mcUserAdminPortal\Services\Registrar'
+		);
 	}
-
-
-	/**
-	 * Register the page controller class.
-	 *
-	 * @return void
-	 */
-	protected function registerPageController()
-	{
-		$this->app->bind('rhwilr\mcUserAdminPortal\Http\Controllers\PageController', function ($app) {
-			$path = $app['config']['core.home'];
-			return new PageController($path);
-		});
-	}
-
-
-	/**
-	 * Get the services provided by the provider.
-	 *
-	 * @return string[]
-	 */
-	public function provides()
-	{
-		return [
-			''
-		];
-	}
-
 
 }
