@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">mc UAP</a>
+            <a class="navbar-brand" href="{{ route('home') }}">mc UAP</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-main">
@@ -36,6 +36,8 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
+                            <li><a href="{{url('profile/'.Auth::user()->id)}}">Profile</a></li>
+                            <li class="divider"></li>
                             <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                         </ul>
                     </li>

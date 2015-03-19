@@ -1,5 +1,6 @@
 <?php
 
+use rhwilr\mcUserAdminPortal\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -12,6 +13,8 @@
 */
 
 Route::get('/', ['as' => 'home', 'uses' =>'HomeController@index']);
+
+Route::resource('profile', 'ProfileController');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',
