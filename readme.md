@@ -1,6 +1,6 @@
 ## mcUserAdminPortal
 
-[![Build Status](https://api.travis-ci.org/rhwilr/mcUserAdminPortal.svg)](https://api.travis-ci.org/rhwilr/mcUserAdminPortal)
+[![Build Status](https://api.travis-ci.org/rhwilr/mcUserAdminPortal.svg)](https://travis-ci.org/rhwilr/mcUserAdminPortal)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
 ## Official Documentation
