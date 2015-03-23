@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'rhwilr\mcUserAdminPortal\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'auth.once' => 'rhwilr\mcUserAdminPortal\Http\Middleware\OnceBasicAuthentication',
+		'auth.api' => 'rhwilr\mcUserAdminPortal\Api\v1\Middleware\ApiAuthenticate',
 		'guest' => 'rhwilr\mcUserAdminPortal\Http\Middleware\RedirectIfAuthenticated',
 	];
 

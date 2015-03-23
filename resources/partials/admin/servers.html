@@ -1,0 +1,87 @@
+<div id="servers" data-ng-controller="ServerIndexCtrl">
+    <div class="panel panel-default">
+        <div class="panel-heading">Servers</div>
+        <div class="panel-body">
+
+            <button type="button" class="btn btn-primary pull-right" ng-click="open()">
+                Add Server
+            </button>
+
+            <table class="table table-striped table-hover ">
+                <thead>
+                <tr>
+                    <th>Server</th>
+                    <th>Status</th>
+                    <th width="120px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="server in servers">
+                    <td>[[server.name]]</td>
+                    <td><p class="text-success">Online</p></td>
+                    <td>
+                        <div>
+                            <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                            <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="AddServerModal.html">
+        <form class='form-horizontal'>
+        <div class="modal-header">
+            <h3 class="modal-title">Add new Server</h3>
+        </div>
+        <div class="modal-body">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>Server</legend>
+                    <div class="form-group">
+                        <label for="servername" class="col-lg-2 control-label">Server Name</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="data.servername">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="host" class="col-lg-2 control-label">Hostname / IP</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="host" placeholder="" ng-model="data.servername">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>Rcon</legend>
+                    <div class="form-group">
+                        <label for="rcon_port" class="col-lg-2 control-label">Port</label>
+                        <div class="col-lg-10">
+                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="data.servername">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="rcon_password" class="col-lg-2 control-label">Password</label>
+                        <div class="col-lg-10">
+                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="data.servername">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button  class="btn btn-default" ng-click="cancel()">Close</button>
+            <button  class="btn btn-primary" ng-click="ok()">Save</button>
+        </div>
+        </form>
+    </script>
+
+
+</div>

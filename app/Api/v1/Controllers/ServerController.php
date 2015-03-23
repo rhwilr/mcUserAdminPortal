@@ -11,7 +11,6 @@ use Illuminate\Http\Request;
  */
 class ServerController extends APIController {
 
-
     /**
      * @var \rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerTransformer
      */
@@ -24,6 +23,7 @@ class ServerController extends APIController {
     public function __construct(\rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerTransformer $serverTransformer)
     {
         $this->serverTransformer = $serverTransformer;
+        $this->middleware('auth.api');
     }
 
 

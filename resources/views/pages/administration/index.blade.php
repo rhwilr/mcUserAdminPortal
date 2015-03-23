@@ -1,136 +1,21 @@
 @extends('app')
 
 @section('content')
-    <div class="container">
+    <div class="container" data-ng-controller="AdminCtrl">
         <div class="row">
 
             <div class="col-md-3">
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <ul class="nav nav-pills nav-stacked">
-                            <li class="active"><a href="#servers" data-toggle="tab" aria-expanded="true">Servers</a></li>
-                            <li class="divider"></li>
-                            <li class=""><a href="#subscriptions" data-toggle="tab" aria-expanded="false">Subscriptions</a></li>
-                            <li class="divider"></li>
-                            <li class=""><a href="#users" data-toggle="tab" aria-expanded="false">Users</a></li>
-                            <li class=""><a href="#roles" data-toggle="tab" aria-expanded="false">Roles</a></li>
-                        </ul>
+                        <tabs data="tabData" type="pills" vertical="true"/>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-9">
                 <div id="myTabContent" class="tab-content">
-                    <div class="tab-pane fade active in" id="servers">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Servers</div>
-                            <div class="panel-body">
 
-                                <button type="button" class="btn btn-primary pull-right" data-toggle="modal" data-target="#myModal">
-                                    Add Server
-                                </button>
-
-                                <table class="table table-striped table-hover ">
-                                    <thead>
-                                    <tr>
-                                        <th>Server</th>
-                                        <th>Status</th>
-                                        <th width="120px"></th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr>
-                                        <td>bevo.rhwilr.ch</td>
-                                        <td><p class="text-success">Online</p></td>
-                                        <td>
-                                            <div>
-                                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                                                <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-
-                            </div>
-                        </div>
-
-
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="true" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-
-                                    {!! Form::open(['url' => ['/'], 'class'=>'form-horizontal']) !!}
-                                    <fieldset>
-
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                            <h4 class="modal-title" id="myModalLabel">Add new Server</h4>
-                                        </div>
-                                        <div class="modal-body">
-
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    <legend>Server</legend>
-                                                    <div class="form-group">
-                                                        {!!Form::label('servername', 'Server Name', ['class' => 'col-lg-2 control-label'])!!}
-                                                        <div class="col-lg-10">
-                                                            {!!Form::text('servername',null,['class' => 'form-control'])!!}
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        {!!Form::label('host', 'Hostname / IP', ['class' => 'col-lg-2 control-label'])!!}
-                                                        <div class="col-lg-10">
-                                                            {!!Form::text('host',null,['class' => 'form-control'])!!}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="panel panel-default">
-                                                <div class="panel-body">
-                                                    <legend>Rcon</legend>
-                                                    <div class="form-group">
-                                                        {!!Form::label('rcon_port', 'Port', ['class' => 'col-lg-2 control-label'])!!}
-                                                        <div class="col-lg-10">
-                                                            {!!Form::text('rcon_port',null,['class' => 'form-control'])!!}
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        {!!Form::label('rcon_password', 'Password', ['class' => 'col-lg-2 control-label'])!!}
-                                                        <div class="col-lg-10">
-                                                            {!!Form::password('rcon_password',['class' => 'form-control'])!!}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                            {!!Form::submit('Save',['class' => 'btn btn-primary'])!!}
-                                        </div>
-
-                                    </fieldset>
-                                    {!! Form::close() !!}
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-
-                    <div class="tab-pane fade" id="subscriptions">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">Subscriptions</div>
-                            <div class="panel-body">
-
-                            </div>
-                        </div>
-                    </div>
+                    <ui-view></ui-view>
 
 
                     <div class="tab-pane fade" id="users">

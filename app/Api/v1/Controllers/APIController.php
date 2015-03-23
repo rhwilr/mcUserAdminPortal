@@ -16,14 +16,6 @@ abstract class APIController extends BaseController {
     use DispatchesCommands, ValidatesRequests;
 
     /**
-     *
-     */
-    public function __construct()
-    {
-        $this->middleware('auth.once');
-    }
-
-    /**
      * @var int
      */
     protected $statusCode = IlluminateResponse::HTTP_OK;
@@ -67,7 +59,7 @@ abstract class APIController extends BaseController {
      */
     public function respondWithPagination(Paginator $items, $data)
     {
-        $data = array_merge($data, [
+        $data = array_merge(['data' => $data], [
             'paginator' => [
                 'total_count' => $items->total(),
                 'total_pages' => ceil($items->total() / $items->perPage()),
