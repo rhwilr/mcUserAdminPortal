@@ -2,7 +2,7 @@
 
 [![Build Status](https://img.shields.io/travis/rhwilr/mcUserAdminPortal.svg)](https://travis-ci.org/rhwilr/mcUserAdminPortal)
 [![Releases](https://img.shields.io/github/release/rhwilr/mcUserAdminPortal.svg)](https://github.com/rhwilr/mcUserAdminPortal/releases)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)]
+![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 ## Official Documentation
 
