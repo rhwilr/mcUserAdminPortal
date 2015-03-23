@@ -12,17 +12,9 @@ use rhwilr\mcUserAdminPortal\Models\User;
 |
 */
 
-Route::group(['prefix' => 'api'], function()
+Route::group(['prefix' => 'api/v1'], function()
 {
 
-    Route::group(['prefix' => 'v1'], function()
-    {
-
-        Route::get('hello', function()
-        {
-            return User::all();
-        });
-
-    });
+    Route::resource('server', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\ServerController');
 
 });

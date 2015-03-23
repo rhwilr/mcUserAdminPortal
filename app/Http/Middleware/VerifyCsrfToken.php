@@ -3,7 +3,20 @@
 use Closure;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken as BaseVerifier;
 
+/**
+ * Class VerifyCsrfToken
+ * @package rhwilr\mcUserAdminPortal\Http\Middleware
+ */
 class VerifyCsrfToken extends BaseVerifier {
+
+	/**
+	 * Routes we want to exclude.
+	 *
+	 * @var array
+	 */
+	protected $routes = [
+		'api/*',
+	];
 
 	/**
 	 * Handle an incoming request.
@@ -11,10 +24,33 @@ class VerifyCsrfToken extends BaseVerifier {
 	 * @param  \Illuminate\Http\Request  $request
 	 * @param  \Closure  $next
 	 * @return mixed
+	 * @throws \Illuminate\Session\TokenMismatchException
 	 */
-	public function handle($request, Closure $next)
+	public function handle($request, \Closure $next)
 	{
-		return parent::handle($request, $next);
+		if ($this->isReading($request)
+			|| $this->excludedRoutes($request)
+			|| $this->tokensMatch($request))
+		{
+			return $this->addCookieToResponse($request, $next($request));
+		}
+
+		throw new \Illuminate\Session\TokenMismatchException;
+	}
+
+	/**
+	 * This will return a bool value based on route checking.
+
+	 * @param  Request $request
+	 * @return boolean
+	 */
+	protected function excludedRoutes($request)
+	{
+		foreach($this->routes as $route)
+			if ($request->is($route))
+				return true;
+
+		return false;
 	}
 
 }

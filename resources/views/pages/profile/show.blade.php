@@ -9,6 +9,7 @@
                     <div class="panel-body">
                         <ul class="nav nav-pills nav-stacked">
                             <li class="active"><a href="#profile" data-toggle="tab" aria-expanded="true">Profile</a></li>
+                            <li class=""><a href="#minecraft" data-toggle="tab" aria-expanded="false">Minecraft</a></li>
                             <li class=""><a href="#billing" data-toggle="tab" aria-expanded="false">Billing</a></li>
                         </ul>
                     </div>
@@ -88,6 +89,16 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="tab-pane fade" id="minecraft">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Minecraft</div>
+                            <div class="panel-body">
+
+                            </div>
+                        </div>
+                    </div>
+
 
                     <div class="tab-pane fade" id="billing">
                         <div class="panel panel-default">

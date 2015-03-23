@@ -149,6 +149,7 @@ return [
 		'rhwilr\mcUserAdminPortal\Providers\ConfigServiceProvider',
 		'rhwilr\mcUserAdminPortal\Providers\EventServiceProvider',
 		'rhwilr\mcUserAdminPortal\Providers\RouteServiceProvider',
+		'rhwilr\mcUserAdminPortal\Providers\MacroServiceProvider',
 
 	],
 

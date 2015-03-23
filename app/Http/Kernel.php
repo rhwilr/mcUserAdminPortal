@@ -26,6 +26,7 @@ class Kernel extends HttpKernel {
 	protected $routeMiddleware = [
 		'auth' => 'rhwilr\mcUserAdminPortal\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
+		'auth.once' => 'rhwilr\mcUserAdminPortal\Http\Middleware\OnceBasicAuthentication',
 		'guest' => 'rhwilr\mcUserAdminPortal\Http\Middleware\RedirectIfAuthenticated',
 	];
 

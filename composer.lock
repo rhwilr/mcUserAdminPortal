@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d07056b4d50ea4d244f23c19b00faa70",
+    "hash": "4b78fb6a69b6ab268c7bb6c642ba592e",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -65,6 +65,58 @@
                 "preload"
             ],
             "time": "2015-01-26 22:06:19"
+        },
+        {
+            "name": "clue/socket-raw",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/clue/php-socket-raw.git",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/clue/php-socket-raw/zipball/8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "reference": "8a10282bcb1e45e076a8a8285237681380e55ea5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-sockets": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Socket\\Raw\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christian Lück",
+                    "email": "christian@lueck.tv"
+                }
+            ],
+            "description": "Simple and lightweight OOP wrapper for PHP's low level sockets extension (ext-sockets)",
+            "homepage": "https://github.com/clue/php-socket-raw",
+            "keywords": [
+                "Socket",
+                "client",
+                "datagram",
+                "dgram",
+                "icmp",
+                "ipv6",
+                "server",
+                "stream",
+                "tcp",
+                "udg",
+                "udp",
+                "unix"
+            ],
+            "time": "2015-03-18 23:48:01"
         },
         {
             "name": "danielstjules/stringy",
@@ -221,6 +273,48 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "gries/rcon",
+            "version": "0.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gries/rcon.git",
+                "reference": "c097fd8f94bb3a6917036cf3afbcb5feed0469b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gries/rcon/zipball/c097fd8f94bb3a6917036cf3afbcb5feed0469b0",
+                "reference": "c097fd8f94bb3a6917036cf3afbcb5feed0469b0",
+                "shasum": ""
+            },
+            "require": {
+                "clue/socket-raw": "~1.1"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~2.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "gries\\Rcon\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Christoph Rosse",
+                    "email": "christoph@rosse.at"
+                }
+            ],
+            "description": "PHP RCON Client",
+            "keywords": [
+                "rcon"
+            ],
+            "time": "2014-12-13 18:29:54"
         },
         {
             "name": "illuminate/html",
