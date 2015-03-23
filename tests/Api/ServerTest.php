@@ -9,7 +9,7 @@ class ServerTest extends TestCase {
 	 */
 	public function testServerIndex()
 	{
-		
+
 	}
 
 }
