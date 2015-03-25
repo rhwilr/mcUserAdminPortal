@@ -7,6 +7,7 @@
                 Add Server
             </button>
 
+
             <table class="table table-striped table-hover ">
                 <thead>
                 <tr>
@@ -26,9 +27,10 @@
                         </div>
                     </td>
                 </tr>
-                <tr ng-hide="servers.length"><td>No Server available!</td></tr>
+                <tr ng-hide="servers.length || !myPromise.hasOwnProperty('data')"><td>No Server available!</td></tr>
                 </tbody>
             </table>
+            <div cg-busy="myPromise"></div>
 
         </div>
     </div>
@@ -38,21 +40,22 @@
         <div class="modal-header">
             <h3 class="modal-title">Add new Server</h3>
         </div>
-        <div class="modal-body">
+            <div cg-busy="myPromise"></div>
+        <div class="modal-body" ng-hide="!myPromise.hasOwnProperty('data')">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <legend>Server</legend>
                     <div class="form-group">
                         <label for="servername" class="col-lg-2 control-label">Server Name</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="data.name">
+                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="resource.name">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="host" class="col-lg-2 control-label">Hostname / IP</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="host" placeholder="" ng-model="data.host">
+                            <input type="text" class="form-control" id="host" placeholder="" ng-model="resource.host">
                         </div>
                     </div>
                 </div>
@@ -64,14 +67,14 @@
                     <div class="form-group">
                         <label for="rcon_port" class="col-lg-2 control-label">Port</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="data.rcon_port">
+                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="resource.rcon_port">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="rcon_password" class="col-lg-2 control-label">Password</label>
                         <div class="col-lg-10">
-                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="data.rcon_password">
+                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="resource.rcon_password">
                         </div>
                     </div>
                 </div>

@@ -51,6 +51,7 @@ class ServerController extends APIController {
     public function show(Request $request,$id)
     {
 
+        sleep(2);
         $server = Server::find($id);
 
         if(!$server){

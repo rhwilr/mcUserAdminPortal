@@ -1,9 +1,12 @@
-app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, data) {
+app.controller('ModalInstanceCtrl', function ($scope, $modalInstance, ResourcesApi, recordID) {
 
-    $scope.data = data;
+
+    $scope.myPromise =  ResourcesApi.get({id:recordID}, function(data) {
+        $scope.resource = data.data;
+    });
 
     $scope.ok = function () {
-        $modalInstance.close($scope.data);
+        $modalInstance.close($scope.resource);
     };
 
     $scope.cancel = function () {
