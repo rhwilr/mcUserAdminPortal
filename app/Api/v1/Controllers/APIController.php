@@ -86,6 +86,34 @@ abstract class APIController extends BaseController {
     }
 
     /**
+     * @param string $message
+     * @return mixed
+     */
+    public function respondUpdated($message = 'Record has been updated')
+    {
+        return $this->respond([
+            'success' => [
+                'message' => $message,
+                'status_code' => $this->getStatusCode()
+            ]
+        ]);
+    }
+
+    /**
+     * @param string $message
+     * @return mixed
+     */
+    public function respondDestroy($message = 'Record has been deleted')
+    {
+        return $this->respond([
+            'success' => [
+                'message' => $message,
+                'status_code' => $this->getStatusCode()
+            ]
+        ]);
+    }
+
+    /**
      * @param $message
      * @return mixed
      */

@@ -21,11 +21,12 @@
                     <td><p class="text-success">Online</p></td>
                     <td>
                         <div>
-                            <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                            <a href="#" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                            <a ng-click="open(server.id)" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                            <a ng-click="" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
                         </div>
                     </td>
                 </tr>
+                <tr ng-hide="servers.length"><td>No Server available!</td></tr>
                 </tbody>
             </table>
 
@@ -44,14 +45,14 @@
                     <div class="form-group">
                         <label for="servername" class="col-lg-2 control-label">Server Name</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="data.servername">
+                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="data.name">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="host" class="col-lg-2 control-label">Hostname / IP</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="host" placeholder="" ng-model="data.servername">
+                            <input type="text" class="form-control" id="host" placeholder="" ng-model="data.host">
                         </div>
                     </div>
                 </div>
@@ -63,14 +64,14 @@
                     <div class="form-group">
                         <label for="rcon_port" class="col-lg-2 control-label">Port</label>
                         <div class="col-lg-10">
-                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="data.servername">
+                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="data.rcon_port">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="rcon_password" class="col-lg-2 control-label">Password</label>
                         <div class="col-lg-10">
-                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="data.servername">
+                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="data.rcon_password">
                         </div>
                     </div>
                 </div>

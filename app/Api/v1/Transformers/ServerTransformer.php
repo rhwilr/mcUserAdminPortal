@@ -9,6 +9,7 @@ class ServerTransformer extends Transformer {
            'name' => $server['name'],
            'host' => $server['host'],
            'rcon_port' => (integer) $server['rcon_port'],
+           'rcon_password' => (integer) $server['rcon_password'],
        ];
     }
 }

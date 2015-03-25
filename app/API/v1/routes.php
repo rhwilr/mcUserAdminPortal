@@ -15,6 +15,6 @@ use rhwilr\mcUserAdminPortal\Models\User;
 Route::group(['prefix' => 'api/v1'], function()
 {
 
-    Route::resource('server', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\ServerController');
+    Route::resource('server', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\ServerController',['except' => ['create', 'edit']]);
 
 });
