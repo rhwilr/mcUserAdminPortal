@@ -18,10 +18,23 @@ class UserTableSeeder extends Seeder
     {
 
         DB::table('users')->delete();
+        
         $admin = new User();
         $admin->name        = 'admin';
-        $admin->email       = 'admin@rhwilr.ch';
-        $admin->password    = bcrypt('123456');
+        $admin->email       = 'admin@example.com';
+        $admin->password    = bcrypt('admin');
+        $admin->save();
+        
+        $admin = new User();
+        $admin->name        = 'user';
+        $admin->email       = 'user@example.com';
+        $admin->password    = bcrypt('user');
+        $admin->save();
+        
+        $admin = new User();
+        $admin->name        = 'premium';
+        $admin->email       = 'premium@example.com';
+        $admin->password    = bcrypt('premium');
         $admin->save();
 
     }
