@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('rhwilr\mcUserAdminPortal\Seeds\UserTableSeeder');
 		$this->call('rhwilr\mcUserAdminPortal\Seeds\RoleTableSeeder');
 		$this->call('rhwilr\mcUserAdminPortal\Seeds\PermissionTableSeeder');
+		$this->call('rhwilr\mcUserAdminPortal\Seeds\ServerTableSeeder');
 	}
 
 }

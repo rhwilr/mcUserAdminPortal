@@ -5,7 +5,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 /**
- * Class RoleTableSeeder
+ * Class ServerTableSeeder
  * @package rhwilr\mcUserAdminPortal\Seeds
  */
 class UserTableSeeder extends Seeder

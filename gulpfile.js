@@ -18,14 +18,12 @@ elixir(function(mix) {
         .scripts([
             'angular/angular.js',
             'angular-resource/angular-resource.js',
-            'angular-bootstrap/ui-bootstrap.js',
+
             'angular-bootstrap/ui-bootstrap-tpls.js',
             'angular-ui-router/release/angular-ui-router.js',
             'angular-ui-router-tabs/src/ui-router-tabs.js',
-            'angular-busy/angular-busy.js',
+            'angular-busy/angular-busy.js'
         ], 'public/js/dependencies.min.js', 'bower_components/')
 
         .angular("resources/assets/angular/", "public/js/", "app.min.js")
-
-        .copy('resources/partials', 'public/partials');
 });

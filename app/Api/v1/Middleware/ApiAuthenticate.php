@@ -37,7 +37,6 @@ class ApiAuthenticate {
 		{
 			return Auth::onceBasic() ?: $next($request);
 		}
-
 		return $next($request);
 	}
 

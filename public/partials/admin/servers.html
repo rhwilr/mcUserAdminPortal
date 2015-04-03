@@ -27,7 +27,7 @@
                         </div>
                     </td>
                 </tr>
-                <tr ng-hide="servers.length || !myPromise.hasOwnProperty('data')"><td>No Server available!</td></tr>
+                <tr ng-hide="servers.length || !showTableContent"><td colspan="3">No Server available!</td></tr>
                 </tbody>
             </table>
             <div cg-busy="myPromise"></div>
@@ -36,26 +36,28 @@
     </div>
 
     <script type="text/ng-template" id="AddServerModal.html">
-        <form class='form-horizontal'>
+        <form class='form-horizontal' ng-submit="ok()">
         <div class="modal-header">
             <h3 class="modal-title">Add new Server</h3>
         </div>
             <div cg-busy="myPromise"></div>
-        <div class="modal-body" ng-hide="!myPromise.hasOwnProperty('data')">
+        <div class="modal-body" ng-show="showModalContent">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <legend>Server</legend>
-                    <div class="form-group">
-                        <label for="servername" class="col-lg-2 control-label">Server Name</label>
-                        <div class="col-lg-10">
+                    <div class="form-group" ng-class="{'has-error':errorResponse.name}">
+                        <label for="servername" class="col-lg-3 control-label">Server Name</label>
+                        <div class="col-lg-9">
                             <input type="text" class="form-control" id="servername" placeholder="" ng-model="resource.name">
+                            <span class="help-block" ng-repeat="error in errorResponse.name">[[error]]</span>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="host" class="col-lg-2 control-label">Hostname / IP</label>
-                        <div class="col-lg-10">
+                    <div class="form-group" ng-class="{'has-error':errorResponse.host}">
+                        <label for="host" class="col-lg-3 control-label">Hostname / IP</label>
+                        <div class="col-lg-9">
                             <input type="text" class="form-control" id="host" placeholder="" ng-model="resource.host">
+                            <span class="help-block" ng-repeat="error in errorResponse.host">[[error]]</span>
                         </div>
                     </div>
                 </div>
@@ -64,25 +66,27 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <legend>Rcon</legend>
-                    <div class="form-group">
-                        <label for="rcon_port" class="col-lg-2 control-label">Port</label>
-                        <div class="col-lg-10">
+                    <div class="form-group" ng-class="{'has-error':errorResponse.rcon_port}">
+                        <label for="rcon_port" class="col-lg-3 control-label">Port</label>
+                        <div class="col-lg-9">
                             <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="resource.rcon_port">
+                            <span class="help-block" ng-repeat="error in errorResponse.rcon_port">[[error]]</span>
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="rcon_password" class="col-lg-2 control-label">Password</label>
-                        <div class="col-lg-10">
+                    <div class="form-group" ng-class="{'has-error':errorResponse.rcon_password}">
+                        <label for="rcon_password" class="col-lg-3 control-label">Password</label>
+                        <div class="col-lg-9">
                             <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="resource.rcon_password">
+                            <span class="help-block" ng-repeat="error in errorResponse.rcon_password">[[error]]</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="modal-footer">
-            <button  class="btn btn-default" ng-click="cancel()">Close</button>
-            <button  class="btn btn-primary" ng-click="ok()">Save</button>
+            <a  class="btn btn-default" ng-click="cancel()">Close</a>
+            <button  class="btn btn-primary">Save</button>
         </div>
         </form>
     </script>
