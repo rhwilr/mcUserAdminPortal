@@ -1,6 +1,9 @@
 <?php namespace rhwilr\mcUserAdminPortal\Http\Controllers;
 
-class HomeController extends Controller {
+use View;
+use gries\Rcon\MessengerFactory;
+
+class DashboardController extends Controller {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -30,7 +33,22 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-		return view('home');
+
+		// setup the messenger
+		$messenger = MessengerFactory::create('darwin.rhwilr.ch', 25575, 'mypass');
+
+// send a simple message
+		$response = $messenger->send('tp rhwilr 00 200 00');
+		echo $response;
+
+// send a message and parse the command via. a callable
+		$response = $messenger->send('list', function($arg) {
+			return explode(':', $arg);
+		});
+
+		dd($response);
+
+		return View::make('pages.dashboard.index');
 	}
 
 }

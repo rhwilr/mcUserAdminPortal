@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
  * Class ServerController
  * @package rhwilr\mcUserAdminPortal\Api\v1\Controllers
  */
-class ServerController extends APIController {
+class ServerCheckController extends APIController {
 
     /**
      * @var \rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerTransformer
@@ -28,22 +28,6 @@ class ServerController extends APIController {
 
 
     /**
-     * Show .
-     *
-     * @return Response
-     */
-    public function index(Request $request)
-    {
-
-        $limit = $request->get('limit')||$request->get('limit')<25?$request->get('limit'):25;
-
-        $servers = Server::orderBy('name')->paginate($limit);
-
-        return $this->respondWithPagination($servers, $this->serverTransformer->transformCollection($servers->all()));
-
-    }
-
-    /**
      * Show
      *
      * @return Response
@@ -52,7 +36,6 @@ class ServerController extends APIController {
     {
 
         $server = Server::find($id);
-
         if(!$server){
             return $this->respondNotFound('Server does not exist.');
         }

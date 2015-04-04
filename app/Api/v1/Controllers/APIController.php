@@ -5,6 +5,7 @@ use \Illuminate\Http\Response as IlluminateResponse;
 use Illuminate\Foundation\Bus\DispatchesCommands;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Response;
+use Config;
 use Illuminate\Contracts\Pagination\Paginator;
 
 /**
@@ -48,6 +49,9 @@ abstract class APIController extends BaseController {
      */
     public function respond($data, $headers = [])
     {
+        if (Config::get('api.slow_mode')){
+            sleep(2);
+        }
         return Response::json($data, $this->getStatusCode(), $headers);
     }
 

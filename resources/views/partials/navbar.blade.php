@@ -14,7 +14,7 @@
             @unless (Auth::guest())
                 <ul class="nav navbar-nav">
                     <li class="{{ HTML::set_active('home') }}"><a href="{{ route('home') }}">Dashboard</a></li>
-                    <li class="{{ HTML::set_active('sunscription') }}"><a href="#">Subscription</a></li>
+                    <li class="{{ HTML::set_active('sunscription') }}"><a href="{{ route('subscription.index') }}">Subscription</a></li>
                     <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}">Administration</a></li>
                 </ul>
             @endif
