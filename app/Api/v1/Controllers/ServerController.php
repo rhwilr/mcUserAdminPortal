@@ -23,7 +23,8 @@ class ServerController extends APIController {
     public function __construct(\rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerTransformer $serverTransformer)
     {
         $this->serverTransformer = $serverTransformer;
-        $this->middleware('auth.api');
+        $this->middleware('api.auth');
+        $this->middleware('api.role.admin');
     }
 
 

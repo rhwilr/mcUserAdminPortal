@@ -26,16 +26,32 @@
                 </ul>
             </div>
         </div>
+        <p></p>
 
-        @if( \Auth::user()->patron_active)
+        @if(\Auth::user()->patron_active)
             <div class="row">
                 <div class="col-lg-2">
                     <img src="/images/diamond.png">
                 </div>
                 <div class="col-lg-10">
                     <h1>You are a Patron. Thank you!</h1>
-                    <p>Your {{\Auth::user()->patron_plan}} membership ends {{ \Carbon\Carbon::parse(\Auth::user()->plan_ends_at)->diffForHumans()}}.</p>
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td width="160"><b>Current membership</b></td>
+                            <td>{{\Auth::user()->patron_plan}}</td>
+                        </tr>
+                        <tr>
+                            <td><b>Ends</b></td>
+                            <td>{{ \Carbon\Carbon::parse(\Auth::user()->plan_ends_at)->toDayDateTimeString()}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        @elseif(\Auth::user()->minecraft_username == '')
+            <div class="alert alert-info">
+                <strong>Heads up!</strong> Before you can become a Patron you have to set your Minecraft-Username in your <a href="/profile#/minecraft" class="alert-link">Profile</a>.
             </div>
         @else
 

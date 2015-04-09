@@ -14,7 +14,7 @@
 Route::get('home', 'DashboardController@index');
 Route::get('/', ['as' => 'home', 'uses' =>'DashboardController@index']);
 
-Route::resource('profile', 'ProfileController');
+Route::resource('profile', 'ProfileController', ['only' => 'index']);
 
 Route::get('patron', ['as' => 'patron', 'uses' => 'SubscriptionController@index']);
 Route::post('patron', ['as' => 'payment', 'uses' => 'Billing\PaypalController@postPayment',]);

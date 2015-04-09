@@ -26,9 +26,12 @@ class ActivateSubscription extends Command implements SelfHandling {
 	 */
 	public function handle()
 	{
-		$server = Server::find(78);
-		$rcon = new Rcon($server);
-		$rcon->activate_player($this->minecraft_username);
+		$servers = Server::all();
+		foreach($servers as $server)
+		{
+			$rcon = new Rcon($server);
+			$rcon->activate_player($this->minecraft_username);
+		}
 	}
 
 }

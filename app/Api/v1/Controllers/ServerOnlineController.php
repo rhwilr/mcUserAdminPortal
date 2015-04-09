@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
  * Class ServerController
  * @package rhwilr\mcUserAdminPortal\Api\v1\Controllers
  */
-class ServerCheckController extends APIController {
+class ServerOnlineController extends APIController {
 
     /**
      * @var \rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerOnlineTransformer
@@ -24,7 +24,7 @@ class ServerCheckController extends APIController {
     public function __construct(\rhwilr\mcUserAdminPortal\Api\v1\Transformers\ServerOnlineTransformer $serverOnlineTransformer)
     {
         $this->serverOnlineTransformer = $serverOnlineTransformer;
-        $this->middleware('auth.api');
+        $this->middleware('api.auth');
     }
 
 

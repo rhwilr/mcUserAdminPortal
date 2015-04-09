@@ -28,16 +28,16 @@ app.controller("AdminCtrl", function($scope) {
     // Now set up the states
     $stateProvider.state('servers', {
         url: '/servers',
-        templateUrl: 'partials/admin/servers.html'
+        templateUrl: '/partials/admin/servers.html'
     }).state('subscriptions', {
         url: '/subscriptions',
-        templateUrl: 'partials/admin/subscriptions.html'
+        templateUrl: '/partials/admin/subscriptions.html'
     }).state('users', {
         url: '/users',
-        templateUrl: 'partials/admin/users.html'
+        templateUrl: '/partials/admin/users.html'
     }).state('roles', {
         url: '/roles',
-        templateUrl: 'partials/admin/roles.html'
+        templateUrl: '/partials/admin/roles.html'
     });
 
 });

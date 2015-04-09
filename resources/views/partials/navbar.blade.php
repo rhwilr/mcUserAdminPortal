@@ -15,7 +15,9 @@
                 <ul class="nav navbar-nav">
                     <li class="{{ HTML::set_active('home') }}"><a href="{{ route('home') }}">Dashboard</a></li>
                     <li class="{{ HTML::set_active('patron') }}"><a href="{{ route('patron') }}">Patron</a></li>
-                    <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}">Administration</a></li>
+                    @if(Entrust::hasRole('admin'))
+                        <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}">Administration</a></li>
+                    @endif
                 </ul>
             @endif
 
@@ -28,7 +30,7 @@
                     <li class="dropdown" dropdown on-toggle="toggled(open)">
                       <a href class="dropdown-toggle" dropdown-toggle>{{ Auth::user()->name }} <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="{{url('profile/'.Auth::user()->id)}}">Profile</a></li>
+                        <li><a href="{{url('/profile')}}">Profile</a></li>
                         <li class="divider"></li>
                         <li><a href="{{ url('/auth/logout') }}">Logout</a></li>
                     </ul>

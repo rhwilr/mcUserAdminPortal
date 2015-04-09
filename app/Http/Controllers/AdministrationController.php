@@ -29,10 +29,7 @@ class AdministrationController extends Controller {
 	 */
 	public function index()
 	{
-		$users = User::all();
-		$roles = Role::all();
-
-		return View::make('pages.administration.index', compact("users", "roles"));
+		return View::make('pages.administration.index');
 	}
 
 	/**
