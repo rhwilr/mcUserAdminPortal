@@ -7,14 +7,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ route('home') }}">mc UAP</a>
+            <a class="navbar-brand" href="{{ route('home') }}">{{ Config::get('app.appname') }}</a>
         </div>
 
         <div class="collapse navbar-collapse" id="navbar-main">
             @unless (Auth::guest())
                 <ul class="nav navbar-nav">
                     <li class="{{ HTML::set_active('home') }}"><a href="{{ route('home') }}">Dashboard</a></li>
-                    <li class="{{ HTML::set_active('sunscription') }}"><a href="{{ route('subscription.index') }}">Subscription</a></li>
+                    <li class="{{ HTML::set_active('patron') }}"><a href="{{ route('patron') }}">Patron</a></li>
                     <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}">Administration</a></li>
                 </ul>
             @endif

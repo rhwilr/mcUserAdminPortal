@@ -9,7 +9,8 @@
 	    "illuminate/html": "5.0.*",
 	    "zizaco/entrust": "dev-laravel-5",
 	  	"mccool/laravel-auto-presenter": "~3.0",
-		"gries/rcon": "0.0.2.*"
+		"gries/rcon": "0.0.2.*",
+	  "paypal/rest-api-sdk-php": "*"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

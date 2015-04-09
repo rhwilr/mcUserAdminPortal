@@ -32,7 +32,7 @@ class SubscriptionController extends Controller {
 	 */
 	public function index()
 	{
-		return View::make('pages.subscription.index');
+		return View::make('pages.patron.index');
 	}
 
 }
