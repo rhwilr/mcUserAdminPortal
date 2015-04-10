@@ -1,4 +1,4 @@
-<div id="servers" data-ng-controller="ServerIndexCtrl">
+<div id="servers">
     <div class="panel panel-default">
         <div class="panel-heading">Servers</div>
         <div class="panel-body">
@@ -18,12 +18,16 @@
                 </thead>
                 <tbody>
                 <tr ng-repeat="server in servers">
-                    <td>[[server.name]]</td>
-                    <td><p class="text-success">Online</p></td>
+                    <td class="vert-align">[[server.name]]</td>
+                    <td class="vert-align">
+                        <span class="spinner" ng-hide="server.online"><i class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>
+                        <p class="text-success" ng-if="server.online.online">[[server.online.online]]</p>
+                        <p class="text-danger" ng-if="!server.online.online">[[server.online.online]]</p>
+                    </td>
                     <td>
                         <div>
                             <a ng-click="open(server.id)" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                            <a ng-click="" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                            <a ui-sref="servers.detail({id:server.id})" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
                         </div>
                     </td>
                 </tr>
@@ -38,7 +42,8 @@
     <script type="text/ng-template" id="AddServerModal.html">
         <form class='form-horizontal' ng-submit="ok()">
         <div class="modal-header">
-            <h3 class="modal-title">Add new Server</h3>
+            <h3 class="modal-title" ng-if="resource.name">[[resource.name]]</h3>
+            <h3 class="modal-title" ng-if="!resource.name">Add new Server</h3>
         </div>
             <div cg-busy="myPromise"></div>
         <div class="modal-body" ng-show="showModalContent">

@@ -1,0 +1,14 @@
+<div id="servers">
+    <div class="panel panel-default">
+        <div class="panel-heading"><a ui-sref="servers" class="btn btn-default btn-xs glyphicon glyphicon-arrow-left" aria-hidden="true"></a> Servers Detail</div>
+        <div class="panel-body">
+
+            <div ng-if="resource">
+                <h2>[[resource.name]]</h2>
+
+            </div>
+            <div cg-busy="myPromise"></div>
+
+        </div>
+    </div>
+</div>

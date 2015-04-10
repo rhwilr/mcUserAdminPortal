@@ -16,7 +16,7 @@
                     <li class="{{ HTML::set_active('home') }}"><a href="{{ route('home') }}">Dashboard</a></li>
                     <li class="{{ HTML::set_active('patron') }}"><a href="{{ route('patron') }}">Patron</a></li>
                     @if(Entrust::hasRole('admin'))
-                        <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}">Administration</a></li>
+                        <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}#/servers">Administration</a></li>
                     @endif
                 </ul>
             @endif
