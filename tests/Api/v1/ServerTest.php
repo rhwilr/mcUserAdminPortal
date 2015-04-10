@@ -9,9 +9,9 @@ class ServerTest extends TestCase {
 	 */
 	public function testServerIndexUnauthorized()
 	{
-	   $response = $this->call('GET', 'api/v1/server');
-	   $this->assertEquals('Invalid credentials.', $response->getContent());	
-	   $this->assertResponseStatus(401);
+	   	$response = $this->call('GET', 'api/v1/server');
+	   	$this->assertEquals('Invalid credentials.', $response->getContent());
+	   	$this->assertResponseStatus(401);
 	}
 
 
@@ -22,14 +22,15 @@ class ServerTest extends TestCase {
 	 */
 	public function testServerIndexAuthorized()
 	{
-	   $user = new \rhwilr\mcUserAdminPortal\Models\User(['id' => 1]);
-      $this->be($user);
+	   	$user = new \rhwilr\mcUserAdminPortal\Models\User(['name' => 'admin']);
+		$admin = $user->where('name', '=', 'admin')->firstOrFail();
+		$this->be($admin);
       
-	   $response = $this->call('GET', 'api/v1/server');
-	   $data = json_decode($response->getContent(true), true);
-      $this->assertArrayHasKey('data', $data);
-      $this->assertArrayHasKey('paginator', $data);
-	   $this->assertResponseOk();
+	   	$response = $this->call('GET', 'api/v1/server');
+	   	$data = json_decode($response->getContent(true), true);
+      	$this->assertArrayHasKey('data', $data);
+      	$this->assertArrayHasKey('paginator', $data);
+	   	$this->assertResponseOk();
 	}
 
 }

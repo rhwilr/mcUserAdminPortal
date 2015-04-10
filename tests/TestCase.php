@@ -22,6 +22,7 @@ class TestCase extends Illuminate\Foundation\Testing\TestCase {
    private function prepareForTests()
    {
        Artisan::call('migrate');
+       Artisan::call('db:seed');
        Mail::pretend(true);
    }
 
