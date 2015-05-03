@@ -1,9 +1,9 @@
 <?php namespace rhwilr\mcUserAdminPortal\Seeds;
 
-use rhwilr\mcUserAdminPortal\Models\Role;
-use rhwilr\mcUserAdminPortal\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use rhwilr\mcUserAdminPortal\Models\Role;
+use rhwilr\mcUserAdminPortal\Models\User;
 
 /**
  * Class RoleTableSeeder
@@ -37,8 +37,5 @@ class RoleTableSeeder extends Seeder
 
         $user1 = User::where('email', '=', 'admin@example.com')->first();
         $user1->attachRole($admin);
-        
-        $user2 = User::where('email', '=', 'premium@example.com')->first();
-        $user2->attachRole($premium);
     }
 }

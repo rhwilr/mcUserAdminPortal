@@ -1,8 +1,8 @@
 <?php namespace rhwilr\mcUserAdminPortal\Services;
 
-use rhwilr\mcUserAdminPortal\User;
-use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
+use rhwilr\mcUserAdminPortal\Models\User;
+use Validator;
 
 class Registrar implements RegistrarContract {
 
