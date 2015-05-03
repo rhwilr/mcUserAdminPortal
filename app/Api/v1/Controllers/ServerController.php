@@ -1,9 +1,9 @@
 <?php namespace rhwilr\mcUserAdminPortal\Api\v1\Controllers;
 
+use Illuminate\Http\Request;
+use Response;
 use rhwilr\mcUserAdminPortal\Models\Server;
 use Validator;
-use Response;
-use Illuminate\Http\Request;
 
 /**
  * Class ServerController
@@ -24,7 +24,7 @@ class ServerController extends APIController {
     {
         $this->serverTransformer = $serverTransformer;
         $this->middleware('api.auth');
-        $this->middleware('api.role.admin');
+        $this->middleware('api.role.admin', ['except' => ['index']]);
     }
 
 
@@ -38,7 +38,7 @@ class ServerController extends APIController {
 
         $limit = $request->get('limit')||$request->get('limit')<25?$request->get('limit'):25;
 
-        $servers = Server::orderBy('name')->paginate($limit);
+        $servers = Server::select('id', 'name', 'host')->orderBy('name')->paginate($limit);
 
         return $this->respondWithPagination($servers, $this->serverTransformer->transformCollection($servers->all()));
 

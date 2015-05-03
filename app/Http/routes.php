@@ -14,6 +14,8 @@
 Route::get('home', 'DashboardController@index');
 Route::get('/', ['as' => 'home', 'uses' =>'DashboardController@index']);
 
+Route::controller('info', 'InfoController');
+
 Route::resource('profile', 'ProfileController', ['only' => 'index']);
 
 Route::get('patron', ['as' => 'patron', 'uses' => 'SubscriptionController@index']);

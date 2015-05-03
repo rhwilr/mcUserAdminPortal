@@ -15,7 +15,20 @@
                 <ul class="nav navbar-nav">
                     <li class="{{ HTML::set_active('home') }}"><a href="{{ route('home') }}">Dashboard</a></li>
                     <li class="{{ HTML::set_active('patron') }}"><a href="{{ route('patron') }}">Patron</a></li>
-                    @if(Entrust::hasRole('admin'))
+
+
+                    <li class="" dropdown is-open="status.isopen">
+                        <a href="#" class="dropdown-toggle" dropdown-toggle ng-disabled="disabled">
+                            Info <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li class="{{ HTML::set_active('info/rules') }}"><a href="{{ url('info/rules') }}">Rules</a>
+                            </li>
+                        </ul>
+                    </li>
+
+
+                @if(Entrust::hasRole('admin'))
                         <li class="{{ HTML::set_active('admin.index') }}"><a href="{{ route('admin.index') }}#/servers">Administration</a></li>
                     @endif
                 </ul>

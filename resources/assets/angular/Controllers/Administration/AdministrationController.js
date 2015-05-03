@@ -6,8 +6,8 @@ app.controller("AdminCtrl", function($scope) {
             route:   'servers'
         },
         {
-            heading: 'Subscriptions',
-            route:   'subscriptions'
+            heading: 'Patrons',
+            route: 'patrons'
         },
         {
             heading: 'Users',
@@ -36,13 +36,14 @@ app.controller("AdminCtrl", function($scope) {
                     controller: 'ServerDetailCtrl'
                 }
             }})
-        .state('subscriptions', {
-        url: '/subscriptions',
-        templateUrl: '/partials/admin/subscriptions.html'
+        .state('patrons', {
+            url: '/patrons',
+            templateUrl: '/partials/admin/patrons.html'
     })
         .state('users', {
         url: '/users',
-        templateUrl: '/partials/admin/users.html'
+            templateUrl: '/partials/admin/users.html',
+            controller: 'UserIndexCtrl'
     })
         .state('roles', {
         url: '/roles',

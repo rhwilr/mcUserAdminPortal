@@ -1,25 +1,23 @@
 <?php namespace rhwilr\mcUserAdminPortal\Http\Controllers\Billing;
 
-use rhwilr\mcUserAdminPortal\Http\Requests;
-use rhwilr\mcUserAdminPortal\Http\Controllers\Controller;
-use PayPal\Rest\ApiContext;
-use PayPal\Auth\OAuthTokenCredential;
+use Carbon\Carbon;
+use Config;
 use PayPal\Api\Amount;
-use PayPal\Api\Details;
+use PayPal\Api\ExecutePayment;
 use PayPal\Api\Item;
 use PayPal\Api\ItemList;
 use PayPal\Api\Payer;
 use PayPal\Api\Payment;
-use PayPal\Api\RedirectUrls;
-use PayPal\Api\ExecutePayment;
 use PayPal\Api\PaymentExecution;
+use PayPal\Api\RedirectUrls;
 use PayPal\Api\Transaction;
-use Illuminate\Http\Request;
-use Carbon\Carbon;
-use Config;
-use URL;
-use Session;
+use PayPal\Auth\OAuthTokenCredential;
+use PayPal\Rest\ApiContext;
 use Redirect;
+use rhwilr\mcUserAdminPortal\Http\Controllers\Controller;
+use rhwilr\mcUserAdminPortal\Http\Requests;
+use Session;
+use URL;
 
 /**
  * Class PaypalController
@@ -78,10 +76,10 @@ class PaypalController extends Controller {
 				$item_1->setName('60 Day Patron') // item name
 				->setCurrency('CHF')
 					->setQuantity(1)
-					->setPrice('19');
+                    ->setPrice('16');
 
 				$amount->setCurrency('CHF')
-					->setTotal(19);
+                    ->setTotal(16);
 
 				$patron_plan = '60 Day Patron';
 				$plan_ends_at = Carbon::now()->addDays(60);
@@ -91,10 +89,10 @@ class PaypalController extends Controller {
 				$item_1->setName('90 Day Patron') // item name
 				->setCurrency('CHF')
 					->setQuantity(1)
-					->setPrice('27');
+                    ->setPrice('21');
 
 				$amount->setCurrency('CHF')
-					->setTotal(27);
+                    ->setTotal(21);
 
 				$patron_plan = '90 Day Patron';
 				$plan_ends_at = Carbon::now()->addDays(90);

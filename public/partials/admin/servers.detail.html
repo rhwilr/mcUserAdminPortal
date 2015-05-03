@@ -6,6 +6,59 @@
             <div ng-if="resource">
                 <h2>[[resource.name]]</h2>
 
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td width="180px">Host:</td>
+                        <td><b>[[resource.host]]</b></td>
+                    </tr>
+                    <tr>
+                        <td>Rcon Port:</td>
+                        <td><b>[[resource.rcon_port]]</b></td>
+                    </tr>
+                    <tr>
+                        <td>Rcon Password:</td>
+                        <td><b>[[resource.rcon_password]]</b></td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <td width="180px">Online:</td>
+                        <td>
+                            <span class="spinner" ng-hide="resource.online"><i
+                                    class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>
+
+                            <div class="text-success" ng-if="resource.online.online">[[resource.online.online]]</div>
+                            <div class="text-danger" ng-if="!resource.online.online">[[resource.online.online]]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="180px">Players:</td>
+                        <td>
+                            <span class="spinner" ng-hide="resource.online"><i
+                                    class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>
+
+                            <div ng-if="resource.online.online">[[resource.online.player_online]]</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="180px">Max Player:</td>
+                        <td>
+                            <span class="spinner" ng-hide="resource.online"><i
+                                    class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>
+
+                            <div ng-if="resource.online.online">[[resource.online.player_max]]</div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+
+                <a ng-click="destroy()" class="btn btn-danger">Delete Server</a>
+
             </div>
             <div cg-busy="myPromise"></div>
 

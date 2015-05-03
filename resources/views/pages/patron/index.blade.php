@@ -15,14 +15,11 @@
                 <p>All the money that we get from Patron and VIP goes straight to maintaining and improving the server!</p>
             </div>
             <div class="col-md-12">
+                <p><b>With a Patron Membership you get some nice extras:</b></p>
                 <ul>
-                    <li>Access to the Patron only UHC Beta</li>
-                    <li>The ability to join games that are full. (Up to 20 Patrons can join games that are already full!)</li>
-                    <li>Colored username in the lobby for your player name and chat name!</li>
-                    <li>Access to the Patron Chest once a day which grants you silver to buy vanity items to use in the lobby or the Mindcrack Island plot server!</li>
-                    <li>Extra loot! When playing mini games, you will earn extra goodies in your loot bag every time! This extra loot could be silver and other fun items to play with in the lobby or plot server!</li>
-                    <li>50% bonus experience! Leveling up grants you access to special quests, items and events on PlayMindcrack!</li>
-                    <li>Bonus Silver! you get an aditional 50% silver added on to the gold you get each game!</li>
+                    <li>The ability to use Chunk-Loaders</li>
+                    <li>The ability to use Mystcraft</li>
+                    <li>A Patron Badge in the chat.</li>
                 </ul>
             </div>
         </div>
@@ -34,15 +31,15 @@
                     <img src="/images/diamond.png">
                 </div>
                 <div class="col-lg-10">
-                    <h1>You are a Patron. Thank you!</h1>
+                    <h1>Du bist ein Patron. Vielen Dank!</h1>
                     <table class="table">
                         <tbody>
                         <tr>
-                            <td width="160"><b>Current membership</b></td>
+                            <td width="160"><b>Akuelle Mitgliedschaft:</b></td>
                             <td>{{\Auth::user()->patron_plan}}</td>
                         </tr>
                         <tr>
-                            <td><b>Ends</b></td>
+                            <td><b>Endet am:</b></td>
                             <td>{{ \Carbon\Carbon::parse(\Auth::user()->plan_ends_at)->toDayDateTimeString()}}</td>
                         </tr>
                         </tbody>
@@ -72,7 +69,8 @@
                 <div class="col-lg-3 text-center">
                     <img src="/images/diamondGearItem.png">
                     <h2>60 Days</h2>
-                    <p>CHF 19.-</p>
+
+                    <p>CHF 16.-</p>
 
                     {!! Form::open(['class' => 'col-lg-8 col-lg-offset-2 ']) !!}
                     {!!Form::hidden('plan','60')!!}
@@ -85,7 +83,8 @@
                 <div class="col-lg-3 text-center">
                     <img src="/images/reactorUraniumQuad.png">
                     <h2>90 Days</h2>
-                    <p>CHF 27.-</p>
+
+                    <p>CHF 21.-</p>
 
                     {!! Form::open(['class' => 'col-lg-8 col-lg-offset-2 ']) !!}
                     {!!Form::hidden('plan','90')!!}
