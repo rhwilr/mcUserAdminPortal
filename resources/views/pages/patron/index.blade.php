@@ -31,15 +31,15 @@
                     <img src="/images/diamond.png">
                 </div>
                 <div class="col-lg-10">
-                    <h1>Du bist ein Patron. Vielen Dank!</h1>
+                    <h1>You are a Patron. Thank You!</h1>
                     <table class="table">
                         <tbody>
                         <tr>
-                            <td width="160"><b>Akuelle Mitgliedschaft:</b></td>
+                            <td width="160"><b>Current membership:</b></td>
                             <td>{{\Auth::user()->patron_plan}}</td>
                         </tr>
                         <tr>
-                            <td><b>Endet am:</b></td>
+                            <td><b>Ends:</b></td>
                             <td>{{ \Carbon\Carbon::parse(\Auth::user()->plan_ends_at)->toDayDateTimeString()}}</td>
                         </tr>
                         </tbody>

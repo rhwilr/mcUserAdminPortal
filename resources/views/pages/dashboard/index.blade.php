@@ -55,15 +55,6 @@
             </div>
         </div>
 
-        <div class="col-md-8">
-            <div class="panel panel-default">
-                <div class="panel-heading">Rules</div>
-                <div class="panel-body">
-                    <p></p>
-                </div>
-            </div>
-        </div>
-
         <div class="col-md-4">
             <div class="panel panel-default">
                 <div class="panel-heading">Mumble</div>
