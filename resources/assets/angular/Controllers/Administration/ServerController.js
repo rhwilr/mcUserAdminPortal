@@ -1,6 +1,5 @@
 app.controller("ServerIndexCtrl", function($scope, $modal, $filter, ServersApi) {
 
-
     var refreshData = function () {
         $scope.myPromise = ServersApi.get(function(data) {
             $scope.servers = data.data;

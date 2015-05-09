@@ -12,10 +12,6 @@ app.controller("AdminCtrl", function($scope) {
         {
             heading: 'Users',
             route:   'users'
-        },
-        {
-            heading: 'Roles',
-            route:   'roles'
         }
     ];
 
@@ -38,16 +34,13 @@ app.controller("AdminCtrl", function($scope) {
             }})
         .state('patrons', {
             url: '/patrons',
-            templateUrl: '/partials/admin/patrons.html'
+            templateUrl: '/partials/admin/patrons.html',
+            controller: 'PatronIndexCtrl'
     })
         .state('users', {
         url: '/users',
             templateUrl: '/partials/admin/users.html',
             controller: 'UserIndexCtrl'
-    })
-        .state('roles', {
-        url: '/roles',
-        templateUrl: '/partials/admin/roles.html'
     });
 
 });

@@ -13,6 +13,6 @@ return [
 	|
 	*/
 
-    'slow_mode' => true,
+    'slow_mode' => false,
 
 ];

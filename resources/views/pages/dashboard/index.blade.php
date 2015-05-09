@@ -21,6 +21,7 @@
                         <thead>
                         <tr>
                             <th>Server</th>
+                            <th>Host</th>
                             <th>Status</th>
                             <th>Players</th>
                         </tr>
@@ -28,6 +29,7 @@
                         <tbody>
                         <tr ng-repeat="server in servers">
                             <td class="vert-align">[[server.name]]</td>
+                            <td class="vert-align">[[server.host]]</td>
                             <td class="vert-align">
                                 <span class="spinner" ng-hide="server.online"><i
                                             class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>

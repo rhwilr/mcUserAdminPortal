@@ -3,6 +3,31 @@
         <div class="panel-heading">Patrons</div>
         <div class="panel-body">
 
+            <div ng-if="resource">
+
+                <table class="table table-striped table-hover ">
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>E-Mail</th>
+                        <th>Patron Plan</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="user in resource">
+                        <td class="vert-align">[[user.name]]</td>
+                        <td class="vert-align">[[user.email]]</td>
+                        <td class="vert-align">[[user.patron_plan]]</td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div cg-busy="myPromise"></div>
+
+
         </div>
     </div>
 </div>

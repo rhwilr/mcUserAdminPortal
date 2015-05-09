@@ -20,10 +20,8 @@
                         <td class="vert-align">[[user.email]]</td>
                         <td>
                             <div>
-                                <a ng-click="open(server.id)" class="btn btn-default"><span
+                                <a ng-click="open(user.id)" class="btn btn-default"><span
                                         class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-                                <a ui-sref="servers.detail({id:server.id})" class="btn btn-default"><span
-                                        class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
                             </div>
                         </td>
                     </tr>
@@ -37,4 +35,47 @@
 
         </div>
     </div>
+
+    <script type="text/ng-template" id="AddUserModal.html">
+        <form class='form-horizontal' ng-submit="ok()">
+            <div class="modal-header">
+                <h3 class="modal-title" ng-if="resource.name">[[resource.name]]</h3>
+
+                <h3 class="modal-title" ng-if="!resource.name">Add new User</h3>
+            </div>
+            <div cg-busy="myPromise"></div>
+            <div class="modal-body" ng-show="showModalContent">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <legend>User</legend>
+                        <div class="form-group" ng-class="{'has-error':errorResponse.name}">
+                            <label for="name" class="col-lg-3 control-label">Name</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="name" placeholder=""
+                                       ng-model="resource.name">
+                                <span class="help-block" ng-repeat="error in errorResponse.name">[[error]]</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error':errorResponse.email}">
+                            <label for="email" class="col-lg-3 control-label">Mail Address</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="email" placeholder=""
+                                       ng-model="resource.email">
+                                <span class="help-block" ng-repeat="error in errorResponse.email">[[error]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" ng-click="cancel()">Close</a>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </script>
+
 </div>

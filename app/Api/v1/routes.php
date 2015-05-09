@@ -1,6 +1,5 @@
 <?php
 
-use rhwilr\mcUserAdminPortal\Models\User;
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -21,5 +20,6 @@ Route::group(['prefix' => 'api/v1'], function()
     Route::match(['put', 'patch'],'user/{id}/profile', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@updateProfile');
     Route::match(['put', 'patch'],'user/{id}/password', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@updatePassword');
     Route::match(['put', 'patch'],'user/{id}/minecraft', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@updateMinecraft');
+    Route::match(['get'], 'user/patrons', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@patrons');
     Route::resource('user', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController',['except' => ['create', 'edit', 'update']]);
 });

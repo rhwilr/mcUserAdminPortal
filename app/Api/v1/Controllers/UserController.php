@@ -1,9 +1,9 @@
 <?php namespace rhwilr\mcUserAdminPortal\Api\v1\Controllers;
 
+use Illuminate\Http\Request;
+use Response;
 use rhwilr\mcUserAdminPortal\Models\User;
 use Validator;
-use Response;
-use Illuminate\Http\Request;
 
 /**
  * Class ServerController
@@ -44,23 +44,20 @@ class UserController extends APIController {
 
     }
 
+
     /**
-     * Show
+     * Show .
      *
      * @return Response
      */
-    public function show(Request $request,$id)
+    public function patrons(Request $request)
     {
 
-        $user = User::find($id);
+        $limit = $request->get('limit') || $request->get('limit') < 25 ? $request->get('limit') : 25;
 
-        if(!$user){
-            return $this->respondNotFound('User does not exist.');
-        }
+        $users = User::where('patron_active', '=', '1')->orderBy('email')->paginate($limit);
 
-        return $this->respond([
-            'data' => $this->userTransformer->transform($user)
-        ]);
+        return $this->respondWithPagination($users, $this->userTransformer->transformCollection($users->all()));
 
     }
 
@@ -74,10 +71,10 @@ class UserController extends APIController {
 
         $user = \Auth::user()->id;
 
-        if($request->method() == "GET") {
+        if ($request->method() == "GET") {
             return $this->show($request, $user);
-        }else{
-            switch($method) {
+        } else {
+            switch ($method) {
                 case 'profile':
                     return $this->updateProfile($request, $user);
                     break;
@@ -88,8 +85,121 @@ class UserController extends APIController {
                     return $this->updateMinecraft($request, $user);
                     break;
             }
-            throw new \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException(array('GET')) ;
+            throw new \Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException(array('GET'));
         }
+    }
+
+    /**
+     * Show
+     *
+     * @return Response
+     */
+    public function show(Request $request, $id)
+    {
+
+        $user = User::find($id);
+
+        if (!$user) {
+            return $this->respondNotFound('User does not exist.');
+        }
+
+        return $this->respond([
+            'data' => $this->userTransformer->transform($user)
+        ]);
+
+    }
+
+    /**
+     *
+     */
+    public function updateProfile(Request $request, $id)
+    {
+        $v = Validator::make($request->all(), [
+            'name' => 'required|max:255',
+            'email' => 'required|unique:users,email,' . $id,
+        ]);
+
+        if ($v->fails()) {
+            return $this->respondValidationFailed($v->errors());
+        }
+
+        $user = User::find($id);
+
+        if (!$user) {
+            return $this->respondNotFound('User does not exist.');
+        }
+
+        $user->name = $request->input('name');
+        $user->email = $request->input('email');
+        $user->save();
+
+        return $this->respondUpdated();
+    }
+
+    /**
+     *
+     */
+    public function updatePassword(Request $request, $id)
+    {
+        $v = Validator::make($request->all(), [
+            'current_password' => 'required',
+            'new_password' => 'required',
+            'confirm_new_password' => 'required',
+        ]);
+
+        if ($v->fails())
+        {
+            return $this->respondValidationFailed($v->errors());
+        }
+
+        $user = User::find($id);
+
+        if(!$user){
+            return $this->respondNotFound('User does not exist.');
+        }
+
+        if ($request->input('new_password') != $request->input('confirm_new_password')) {
+            return $this->respondValidationFailed(['confirm_new_password' => ["The confirm new password field did not match your new password."]]);
+        }
+
+        if (!\Hash::check($request->input('current_password'), $user->password)) {
+            return $this->respondValidationFailed(['current_password' => ["The current password field did not match your current password."]]);
+        }
+
+        $user->password = bcrypt($request->input('new_password'));
+        $user->save();
+
+        return $this->respondUpdated();
+    }
+
+    /**
+     *
+     */
+    public function updateMinecraft(Request $request, $id)
+    {
+        $v = Validator::make($request->all(), [
+            'minecraft_username' => 'required',
+        ]);
+
+        if ($v->fails())
+        {
+            return $this->respondValidationFailed($v->errors());
+        }
+
+        $user = User::find($id);
+
+        if(!$user){
+            return $this->respondNotFound('User does not exist.');
+        }
+
+        if ($user->patron_active) {
+            return $this->respondValidationFailed(['minecraft_username' => ["The minecraft username field can not be changed within a patron period."]]);
+        }
+
+        $user->minecraft_username = $request->input('minecraft_username');
+        $user->save();
+
+        return $this->respondUpdated();
     }
 
     /**
@@ -112,101 +222,6 @@ class UserController extends APIController {
         User::create($request->input());
 
         return $this->respondStored();
-    }
-
-
-    /**
-     *
-     */
-    public function updateProfile(Request $request,$id)
-    {
-        $v = Validator::make($request->all(), [
-            'name' => 'required|max:255',
-            'email' => 'required|unique:users,email,'.$id,
-        ]);
-
-        if ($v->fails())
-        {
-            return $this->respondValidationFailed($v->errors());
-        }
-
-        $user = User::find($id);
-
-        if(!$user){
-            return $this->respondNotFound('User does not exist.');
-        }
-
-        $user->name = $request->input('name');
-        $user->email = $request->input('email');
-        $user->save();
-
-        return $this->respondUpdated();
-    }
-
-    /**
-     *
-     */
-    public function updatePassword(Request $request,$id)
-    {
-        $v = Validator::make($request->all(), [
-            'current_password' => 'required',
-            'new_password' => 'required',
-            'confirm_new_password' => 'required',
-        ]);
-
-        if ($v->fails())
-        {
-            return $this->respondValidationFailed($v->errors());
-        }
-
-        $user = User::find($id);
-
-        if(!$user){
-            return $this->respondNotFound('User does not exist.');
-        }
-
-        if($request->input('new_password') != $request->input('confirm_new_password')){
-            return $this->respondValidationFailed(['confirm_new_password'=> ["The confirm new password field did not match your new password."]]);
-        }
-
-        if(!\Hash::check($request->input('current_password'), $user->password)){
-            return $this->respondValidationFailed(['current_password'=> ["The current password field did not match your current password."]]);
-        }
-
-        $user->password = bcrypt($request->input('new_password'));
-        $user->save();
-
-        return $this->respondUpdated();
-    }
-
-    /**
-     *
-     */
-    public function updateMinecraft(Request $request,$id)
-    {
-        $v = Validator::make($request->all(), [
-            'minecraft_username' => 'required',
-        ]);
-
-        if ($v->fails())
-        {
-            return $this->respondValidationFailed($v->errors());
-        }
-
-        $user = User::find($id);
-
-        if(!$user){
-            return $this->respondNotFound('User does not exist.');
-        }
-
-        if($user->patron_active){
-            return $this->respondValidationFailed(['minecraft_username'=> ["The minecraft username field can not be changed within a patron period."]]);
-        }
-
-        $user->minecraft_username = $request->input('minecraft_username');
-        $user->save();
-
-        return $this->respondUpdated();
     }
 
     public function destroy(Request $request,$id)
