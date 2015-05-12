@@ -22,6 +22,7 @@ Route::group(['prefix' => 'info'], function()
 
 });
 
+Route::resource('about', 'AboutController', ['only' => 'index']);
 
 Route::resource('profile', 'ProfileController', ['only' => 'index']);
 
