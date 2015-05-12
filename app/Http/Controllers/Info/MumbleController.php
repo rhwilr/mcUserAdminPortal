@@ -1,8 +1,9 @@
-<?php namespace rhwilr\mcUserAdminPortal\Http\Controllers;
+<?php namespace rhwilr\mcUserAdminPortal\Http\Controllers\Info;
 
+use rhwilr\mcUserAdminPortal\Http\Controllers\Controller;
 use View;
 
-class InfoController extends Controller
+class MumbleController extends Controller
 {
 
     /*
@@ -26,14 +27,15 @@ class InfoController extends Controller
         $this->middleware('auth');
     }
 
+
     /**
-     * Show the application dashboard to the user.
+     * Show Info Page.
      *
      * @return Response
      */
-    public function getRules()
+    public function getInfo()
     {
-        return View::make('pages.info.rules');
+        return View::make('pages.info.mumble.info');
     }
 
 }

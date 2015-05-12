@@ -5,7 +5,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>Become a Patron</h1>
+
+                <div class="alert alert-warning">
+                    <strong>Attention!</strong> All Information on this site is temporary and will change before the public release of the server..
+                </div>
+
             </div>
+
+
 
             <div class="col-md-12">
                 <p><b>{{ Config::get('app.appname') }}</b> is supported by the fans like yourself.

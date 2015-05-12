@@ -61,7 +61,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Mumble</div>
                 <div class="panel-body">
-                    <p><a href="http://wiki.mumble.info/wiki/Main_Page" target="_blank">Mumble Voice Chat:</a></p>
+                    <p><a href="{{ url('info/mumble/info') }}">Mumble Voice Chat:</a></p>
 
                     <p><b>mumble.rhwilr.ch</b></p>
                 </div>

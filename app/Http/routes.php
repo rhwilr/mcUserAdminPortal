@@ -14,7 +14,14 @@
 Route::get('home', 'DashboardController@index');
 Route::get('/', ['as' => 'home', 'uses' =>'DashboardController@index']);
 
-Route::controller('info', 'InfoController');
+
+Route::group(['prefix' => 'info'], function()
+{
+	Route::controller('ftbinfinity', 'Info\FtbInfinityController');
+    Route::controller('mumble', 'Info\MumbleController');
+
+});
+
 
 Route::resource('profile', 'ProfileController', ['only' => 'index']);
 
