@@ -70,6 +70,21 @@
                     </div>
                 </div>
 
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <legend>Minecraft</legend>
+                        <div class="form-group" ng-class="{'has-error':errorResponse.minecraft_username}">
+                            <label for="minecraft_username" class="col-lg-3 control-label">Minecraft Username</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="minecraft_username" placeholder=""
+                                       ng-model="resource.minecraft_username">
+                                <span class="help-block" ng-repeat="error in errorResponse.minecraft_username">[[error]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <div class="modal-footer">
                 <a class="btn btn-default" ng-click="cancel()">Close</a>

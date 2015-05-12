@@ -131,6 +131,7 @@ class UserController extends APIController {
 
         $user->name = $request->input('name');
         $user->email = $request->input('email');
+        $user->minecraft_username = $request->input('minecraft_username');
         $user->save();
 
         return $this->respondUpdated();
