@@ -1,0 +1,100 @@
+<div id="servers">
+    <div class="panel panel-default">
+        <div class="panel-heading">Servers</div>
+        <div class="panel-body">
+
+            <button type="button" class="btn btn-primary pull-right" ng-click="open()">
+                Add Server
+            </button>
+
+
+            <table class="table table-striped table-hover ">
+                <thead>
+                <tr>
+                    <th>Server</th>
+                    <th>Status</th>
+                    <th width="120px"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat="server in servers">
+                    <td class="vert-align">[[server.name]]</td>
+                    <td class="vert-align">
+                        <span class="spinner" ng-hide="server.online"><i class="glyphicon glyphicon-refresh glyphicon-spin"></i></span>
+                        <p class="text-success" ng-if="server.online.online">[[server.online.online]]</p>
+                        <p class="text-danger" ng-if="!server.online.online">[[server.online.online]]</p>
+                    </td>
+                    <td>
+                        <div>
+                            <a ng-click="open(server.id)" class="btn btn-default"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                            <a ui-sref="servers.detail({id:server.id})" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></a>
+                        </div>
+                    </td>
+                </tr>
+                <tr ng-hide="servers.length || !showTableContent"><td colspan="3">No Server available!</td></tr>
+                </tbody>
+            </table>
+            <div cg-busy="myPromise"></div>
+
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="AddServerModal.html">
+        <form class='form-horizontal' ng-submit="ok()">
+        <div class="modal-header">
+            <h3 class="modal-title" ng-if="resource.name">[[resource.name]]</h3>
+            <h3 class="modal-title" ng-if="!resource.name">Add new Server</h3>
+        </div>
+            <div cg-busy="myPromise"></div>
+        <div class="modal-body" ng-show="showModalContent">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>Server</legend>
+                    <div class="form-group" ng-class="{'has-error':errorResponse.name}">
+                        <label for="servername" class="col-lg-3 control-label">Server Name</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="servername" placeholder="" ng-model="resource.name">
+                            <span class="help-block" ng-repeat="error in errorResponse.name">[[error]]</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error':errorResponse.host}">
+                        <label for="host" class="col-lg-3 control-label">Hostname / IP</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="host" placeholder="" ng-model="resource.host">
+                            <span class="help-block" ng-repeat="error in errorResponse.host">[[error]]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <legend>Rcon</legend>
+                    <div class="form-group" ng-class="{'has-error':errorResponse.rcon_port}">
+                        <label for="rcon_port" class="col-lg-3 control-label">Port</label>
+                        <div class="col-lg-9">
+                            <input type="text" class="form-control" id="rcon_port" placeholder="" ng-model="resource.rcon_port">
+                            <span class="help-block" ng-repeat="error in errorResponse.rcon_port">[[error]]</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group" ng-class="{'has-error':errorResponse.rcon_password}">
+                        <label for="rcon_password" class="col-lg-3 control-label">Password</label>
+                        <div class="col-lg-9">
+                            <input type="password" class="form-control" id="rcon_password" placeholder="" ng-model="resource.rcon_password">
+                            <span class="help-block" ng-repeat="error in errorResponse.rcon_password">[[error]]</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <a  class="btn btn-default" ng-click="cancel()">Close</a>
+            <button  class="btn btn-primary">Save</button>
+        </div>
+        </form>
+    </script>
+
+
+</div>

@@ -30,6 +30,19 @@ return [
 
 	/*
 	|--------------------------------------------------------------------------
+	| Application Name
+	|--------------------------------------------------------------------------
+	|
+	| This URL is used by the console to properly generate URLs when using
+	| the Artisan command line tool. You should set this to the root of
+	| your application so that it is used when running Artisan tasks.
+	|
+	*/
+
+	'appname' => 'rhwilr.ch',
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Timezone
 	|--------------------------------------------------------------------------
 	|
@@ -78,7 +91,7 @@ return [
 	|
 	*/
 
-	'key' => env('APP_KEY', 'SomeRandomString'),
+	'key' => env('APP_KEY', '8_7JF$Od5aqKnt5Z7EH6R!P4FExB&KvI'),
 
 	'cipher' => MCRYPT_RIJNDAEL_128,
 
@@ -137,6 +150,11 @@ return [
 		'Illuminate\View\ViewServiceProvider',
 
 		/*
+		 * Components Service Providers...
+		 */
+		'Illuminate\Html\HtmlServiceProvider',
+		'Zizaco\Entrust\EntrustServiceProvider',
+		/*
 		 * Application Service Providers...
 		 */
 		'rhwilr\mcUserAdminPortal\Providers\AppServiceProvider',
@@ -144,6 +162,7 @@ return [
 		'rhwilr\mcUserAdminPortal\Providers\ConfigServiceProvider',
 		'rhwilr\mcUserAdminPortal\Providers\EventServiceProvider',
 		'rhwilr\mcUserAdminPortal\Providers\RouteServiceProvider',
+		'rhwilr\mcUserAdminPortal\Providers\MacroServiceProvider',
 
 	],
 
@@ -192,6 +211,10 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Form'      => 'Illuminate\Html\FormFacade',
+		'HTML'        => 'Illuminate\Html\HtmlFacade',
+		'Entrust' => 'Zizaco\Entrust\EntrustFacade',
 
 	],
 

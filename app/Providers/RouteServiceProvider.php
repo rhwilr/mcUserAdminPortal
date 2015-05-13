@@ -24,7 +24,7 @@ class RouteServiceProvider extends ServiceProvider {
 	{
 		parent::boot($router);
 
-		//
+		$router->model('profile', 'rhwilr\mcUserAdminPortal\Models\User');
 	}
 
 	/**
@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider {
 		$router->group(['namespace' => $this->namespace], function($router)
 		{
 			require app_path('Http/routes.php');
+			require app_path('Api/v1/routes.php');
 		});
 	}
 

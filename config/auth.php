@@ -28,7 +28,7 @@ return [
 	|
 	*/
 
-	'model' => 'rhwilr\mcUserAdminPortal\User',
+	'model' => 'rhwilr\mcUserAdminPortal\Models\User',
 
 	/*
 	|--------------------------------------------------------------------------

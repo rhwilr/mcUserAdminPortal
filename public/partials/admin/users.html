@@ -1,0 +1,96 @@
+<div id="users">
+    <div class="panel panel-default">
+        <div class="panel-heading">Users ([[ resource.length ]])</div>
+        <div class="panel-body">
+
+            <div ng-if="resource">
+
+                <table class="table table-striped table-hover ">
+                    <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>E-Mail</th>
+                        <th width="120px"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    <tr ng-repeat="user in resource">
+                        <td class="vert-align">[[user.name]]</td>
+                        <td class="vert-align">[[user.email]]</td>
+                        <td>
+                            <div>
+                                <a ng-click="open(user.id)" class="btn btn-default"><span
+                                        class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+            <div cg-busy="myPromise"></div>
+
+
+        </div>
+    </div>
+
+    <script type="text/ng-template" id="AddUserModal.html">
+        <form class='form-horizontal' ng-submit="ok()">
+            <div class="modal-header">
+                <h3 class="modal-title" ng-if="resource.name">[[resource.name]]</h3>
+
+                <h3 class="modal-title" ng-if="!resource.name">Add new User</h3>
+            </div>
+            <div cg-busy="myPromise"></div>
+            <div class="modal-body" ng-show="showModalContent">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <legend>User</legend>
+                        <div class="form-group" ng-class="{'has-error':errorResponse.name}">
+                            <label for="name" class="col-lg-3 control-label">Name</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="name" placeholder=""
+                                       ng-model="resource.name">
+                                <span class="help-block" ng-repeat="error in errorResponse.name">[[error]]</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group" ng-class="{'has-error':errorResponse.email}">
+                            <label for="email" class="col-lg-3 control-label">Mail Address</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="email" placeholder=""
+                                       ng-model="resource.email">
+                                <span class="help-block" ng-repeat="error in errorResponse.email">[[error]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <legend>Minecraft</legend>
+                        <div class="form-group" ng-class="{'has-error':errorResponse.minecraft_username}">
+                            <label for="minecraft_username" class="col-lg-3 control-label">Minecraft Username</label>
+
+                            <div class="col-lg-9">
+                                <input type="text" class="form-control" id="minecraft_username" placeholder=""
+                                       ng-model="resource.minecraft_username">
+                                <span class="help-block" ng-repeat="error in errorResponse.minecraft_username">[[error]]</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <a class="btn btn-default" ng-click="cancel()">Close</a>
+                <button class="btn btn-primary">Save</button>
+            </div>
+        </form>
+    </script>
+
+</div>

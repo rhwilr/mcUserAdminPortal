@@ -2,6 +2,8 @@
   "private": true,
   "devDependencies": {
     "gulp": "^3.8.8",
-    "laravel-elixir": "*"
+    "laravel-elixir": "*",
+    "laravel-elixir-angular":"*",
+    "bower": "^1.3.12"
   }
 }
