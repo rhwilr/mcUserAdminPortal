@@ -79,7 +79,10 @@
                     </div>
                     <div class="panel-body">
                         <label>
-                            <input type="checkbox" value="[[user.rules_agreed]]"> I have read the rules and agree to all of them.
+                            <input type="checkbox"
+
+                                   ng-model="user.rules_agreed"
+                                   ng-change="changeRules()"> I have read the rules and agree to all of them.
                         </label>
                     </div>
                 </div>

@@ -8,11 +8,11 @@ class UserTransformer extends Transformer {
            'id' => (integer) $user['id'],
            'name' => $user['name'],
            'email' => $user['email'],
-           'patron_active' => (integer) $user['patron_active'],
+           'patron_active' => (bool) $user['patron_active'],
            'patron_plan' => $user['patron_plan'],
            'plan_ends_at' => $user['plan_ends_at'],
            'minecraft_username' => $user['minecraft_username'],
-           'rules_agreed' => $user['agreedRules'],
+           'rules_agreed' => (bool)$user['agreedRules'],
        ];
     }
 }

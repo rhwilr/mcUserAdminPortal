@@ -8,15 +8,20 @@ app.controller("RulesCtrl", function ($scope, $modal, $filter, RulesApi) {
     };
     refreshData();
 
-    $scope.$watch('user', function (newValue, oldValue) {
-        angular.forEach($scope.servers, function (server) {
-            ServersApi.online({id: server.id}, function (data) {
-                server.online = data.data;
+
+    $scope.changeRules = function() {
+
+        if ($scope.user.rules_agreed){
+            RulesApi.agree($scope.resource, function(res) {
+            }, function(res) {
             });
+        } else {
+            RulesApi.disagree($scope.resource, function(res) {
+            }, function(res) {
+            });
+        }
 
-        });
-
-    });
+    };
 
 
 });
