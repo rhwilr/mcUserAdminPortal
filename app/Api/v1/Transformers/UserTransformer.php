@@ -12,6 +12,7 @@ class UserTransformer extends Transformer {
            'patron_plan' => $user['patron_plan'],
            'plan_ends_at' => $user['plan_ends_at'],
            'minecraft_username' => $user['minecraft_username'],
+           'rules_agreed' => $user['agreedRules'],
        ];
     }
 }

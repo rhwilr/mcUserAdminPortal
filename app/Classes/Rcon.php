@@ -65,4 +65,14 @@ class Rcon extends Classes {
     {
         return $this->raw('p user '.$user.' group remove patron');
     }
+
+    public function whitelist_add_player($user)
+    {
+        return $this->raw('whitelist add '.$user.'');
+    }
+
+    public function whitelist_remove_player($user)
+    {
+        return $this->raw('whitelist remove '.$user.'');
+    }
 }
