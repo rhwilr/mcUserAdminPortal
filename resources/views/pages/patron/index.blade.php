@@ -60,10 +60,10 @@
         @else
 
             <div class="row">
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <img src="/images/wrenchItem.png">
                     <h2>30 Days</h2>
-                    <p>CHF 10.-</p>
+                    <p>CHF 8.-</p>
 
                     {!! Form::open(['url' => route('payment'), 'class' => 'col-lg-8 col-lg-offset-2 ']) !!}
                         {!!Form::hidden('plan','30')!!}
@@ -73,11 +73,11 @@
                     {!! Form::close() !!}
 
                 </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <img src="/images/diamondGearItem.png">
                     <h2>60 Days</h2>
 
-                    <p>CHF 16.-</p>
+                    <p>CHF 14.- <small>(save 2.-)</small></p>
 
                     {!! Form::open(['class' => 'col-lg-8 col-lg-offset-2 ']) !!}
                     {!!Form::hidden('plan','60')!!}
@@ -85,13 +85,12 @@
                         {!!Form::submit('Buy now',['class' => 'btn btn-primary'])!!}
                     </div>
                     {!! Form::close() !!}
-
                 </div>
-                <div class="col-lg-3 text-center">
+                <div class="col-lg-4 text-center">
                     <img src="/images/reactorUraniumQuad.png">
                     <h2>90 Days</h2>
 
-                    <p>CHF 21.-</p>
+                    <p>CHF 18.- <small>(save 6.-)</small></p>
 
                     {!! Form::open(['class' => 'col-lg-8 col-lg-offset-2 ']) !!}
                     {!!Form::hidden('plan','90')!!}
@@ -99,20 +98,6 @@
                         {!!Form::submit('Buy now',['class' => 'btn btn-primary'])!!}
                     </div>
                     {!! Form::close() !!}
-
-                </div>
-                <div class="col-lg-3 text-center">
-                    <img src="/images/overclockerUpgrade.png">
-                    <h2>VIP (90 Days)</h2>
-                    <p>CHF 35.-</p>
-
-                    {!! Form::open(['class' => 'col-lg-8 col-lg-offset-2 ']) !!}
-                    {!!Form::hidden('plan','vip')!!}
-                    <div class="form-group">
-                        {!!Form::submit('Buy now',['class' => 'btn btn-primary'])!!}
-                    </div>
-                    {!! Form::close() !!}
-
                 </div>
             </div>
 
