@@ -52,7 +52,7 @@ class RulesController extends APIController {
 
         $user->acceptRules();
         $this->dispatch(
-            new \rhwilr\mcUserAdminPortal\Commands\AddWhitelist(\Auth::user()->minecraft_username)
+            new \rhwilr\mcUserAdminPortal\Commands\ActivateMember(\Auth::user()->minecraft_username)
         );
 
         return $this->respond([
@@ -74,7 +74,7 @@ class RulesController extends APIController {
 
         $user->disagreeRules();
         $this->dispatch(
-            new \rhwilr\mcUserAdminPortal\Commands\RemoveWhitelist(\Auth::user()->minecraft_username)
+            new \rhwilr\mcUserAdminPortal\Commands\DeactivateMember(\Auth::user()->minecraft_username)
         );
 
         return $this->respond([

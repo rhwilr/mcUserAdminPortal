@@ -56,12 +56,22 @@ class Rcon extends Classes {
         });
     }
 
-    public function activate_player($user)
+    public function activate_member($user)
+    {
+        return $this->raw('p user '.$user.' group set member');
+    }
+
+    public function deactivate_member($user)
+    {
+        return $this->raw('p user '.$user.' group remove member');
+    }
+
+    public function activate_patron($user)
     {
         return $this->raw('p user '.$user.' group set patron');
     }
 
-    public function deactivate_player($user)
+    public function deactivate_patron($user)
     {
         return $this->raw('p user '.$user.' group remove patron');
     }

@@ -7,8 +7,7 @@
                 <div class="panel panel-primary">
                     <div class="panel-heading"><b>TL;DR</b></div>
                     <div class="panel-body">
-                        Don't be a jerk to other players, don't cheat, and you'll be fine.</br>
-                        Always try to minimize lag.
+                        Try to minimize lag, don't be a jerk to other players, don't cheat, and you'll be fine.
                     </div>
                 </div>
 
@@ -82,7 +81,7 @@
                             <input type="checkbox"
 
                                    ng-model="user.rules_agreed"
-                                   ng-change="changeRules()"> I have read the rules and agree to all of them.
+                                   ng-change="changeRules()"> <b>I have read the above rules and agree to abide by them</b>
                         </label>
                     </div>
                 </div>
