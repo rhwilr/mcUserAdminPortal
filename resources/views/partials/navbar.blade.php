@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" data-ng-controller="NavbarInstanceCtrl">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
+            <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
                 <span class="sr-only">Toggle Navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -10,7 +10,7 @@
             <a class="navbar-brand" href="{{ route('home') }}">{{ Config::get('app.appname') }}</a>
         </div>
 
-        <div class="collapse navbar-collapse" id="navbar-main">
+        <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
 
             <ul class="nav navbar-nav">
 
