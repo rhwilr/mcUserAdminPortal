@@ -3,8 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-
+            <div class="col-md-9">
 
                 <h1>Map</h1>
                 <div class="panel panel-default">
@@ -33,8 +32,6 @@
                     </div>
                 </div>
 
-
-
                 <h1>Patron Features</h1>
                 <div class="panel panel-default">
                     <div class="panel-heading">Chunkloader</div>
@@ -52,6 +49,29 @@
                     <div class="panel-heading">Mystcraft / RF-Tools</div>
                     <div class="panel-body">
                         <p>The generation of additional dimmentions can put a lot of load onto the server. Therefore these mods are only available to patrons.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <h1>Commands</h1>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <p>
+                            <b>AFK</b>
+                            <p><code>/afk</code></br>
+                            Marks you as away from keyboard and makes you invulnerable. After 5minutes you will get disconnected.</p>
+                        </p>
+
+                        <p>
+                            <b>Map</b>
+                            <p><code>/dynmap hide</code></br>
+                            Hide yourself on the online map.</p>
+                            <p><code>/dynmap show</code></br>
+                            Show yourself on the map again.</p>
+                        </p>
                     </div>
                 </div>
 
