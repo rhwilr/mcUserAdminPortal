@@ -58,7 +58,7 @@ class Rcon extends Classes {
 
     public function activate_member($user)
     {
-        return $this->raw('p user '.$user.' group set member');
+        return $this->raw('p user '.$user.' group add member');
     }
 
     public function deactivate_member($user)
@@ -68,7 +68,7 @@ class Rcon extends Classes {
 
     public function activate_patron($user)
     {
-        return $this->raw('p user '.$user.' group set patron');
+        return $this->raw('p user '.$user.' group add patron');
     }
 
     public function deactivate_patron($user)
