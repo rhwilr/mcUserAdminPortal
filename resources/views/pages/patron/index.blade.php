@@ -21,11 +21,13 @@
 
                 <p>All the money that we get from Patron and VIP goes straight to maintaining and improving the server!</p>
             </div>
+            <p></p>
             <div class="col-md-12">
                 <p><b>With a Patron Membership you get some nice extras:</b></p>
                 <ul>
-                    <li>The ability to use Chunk-Loaders</li>
+                    <li>The ability to use "ChickenChunk" Chunk-Loaders</li>
                     <li>The ability to use Mystcraft</li>
+                    <li>The ability to use RF-Tools</li>
                     <li>A Patron Badge in the chat.</li>
                 </ul>
             </div>
