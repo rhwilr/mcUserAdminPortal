@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-9">
+            <div class="col-md-12">
 
                 <h1>Map</h1>
                 <div class="panel panel-default">
@@ -31,6 +31,14 @@
                         </p>
                     </div>
                 </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">Online-Map</div>
+                    <div class="panel-body">
+                        <p>The <b><a href="http://map.rhwilr.ch" target="_blank">Online-map</a></b> updates live while players are walking around and building.</p>
+                        <p>Due to the enormous amount of resources it takes to render a map this large, it can sometimes take a long time to update new blocks.</p>
+                        <p><b>Tip:</b> You can hide yourselfe from the map by sneeking, drinking a potion of invisibility or if your underground.</p>
+                    </div>
+                </div>
 
                 <h1>Patron Features</h1>
                 <div class="panel panel-default">
@@ -40,7 +48,8 @@
                         But you can still use chunkloaders from other mods, even if you are not a patron.</p>
                         Other possible chunkloaders:
                         <ul>
-                            <li></li>
+                            <li>MFR Chunkloader (uses Mobessence)</li>
+                            <li>Railcraft Worldanchor (uses Enderpearls)</li>
                         </ul>
                     </div>
                 </div>
@@ -51,32 +60,7 @@
                         <p>The generation of additional dimmentions can put a lot of load onto the server. Therefore these mods are only available to patrons.</p>
                     </div>
                 </div>
-
             </div>
-
-            <div class="col-md-3">
-
-                <h1>Commands</h1>
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        <p>
-                            <b>AFK</b>
-                            <p><code>/afk</code></br>
-                            Marks you as away from keyboard and makes you invulnerable. After 5minutes you will get disconnected.</p>
-                        </p>
-
-                        <p>
-                            <b>Map</b>
-                            <p><code>/dynmap hide</code></br>
-                            Hide yourself on the online map.</p>
-                            <p><code>/dynmap show</code></br>
-                            Show yourself on the map again.</p>
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-
         </div>
     </div>
 @endsection

@@ -5,33 +5,25 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1>Become a Patron</h1>
-
-                <div class="alert alert-warning">
-                    <strong>Attention!</strong> All Information on this site is temporary and will change before the public release of the server..
+                <div class="col-md-12">
+                    <p><b>{{ Config::get('app.appname') }}</b> is supported by the fans like yourself.
+                        We want to build a server that we would be proud to play on.
+                        If you enjoy playing on here and are interested in supporting the server, becoming a Patron.</p>
+                    <p>All the money that we get from Patron and VIP goes straight to maintaining and improving the server!</p>
                 </div>
-
+                <div class="col-md-12">
+                    <p>
+                        <b>With a Patron Membership you get some nice extras:</b>
+                        <ul>
+                            <li>The ability to use Chunk-Loaders from the Chicken-Chunk Mod</li>
+                            <li>Build your own Mystcraft dimentions</li>
+                            <li>Build your own RF-Tools dimentions</li>
+                            <li>A Patron Badge in the chat.</li>
+                            <li>A warm feeling in your heart for supporting the server.</li>
+                        </ul>
+                    </p>
+                </div>
             </div>
-
-
-
-            <div class="col-md-12">
-                <p><b>{{ Config::get('app.appname') }}</b> is supported by the fans like yourself.
-                We want to build a server that we would be proud to play on.
-                If you enjoy playing on here and are interested in supporting the server, becoming a Patron.</p>
-
-                <p>All the money that we get from Patron and VIP goes straight to maintaining and improving the server!</p>
-            </div>
-            <p></p>
-            <div class="col-md-12">
-                <p><b>With a Patron Membership you get some nice extras:</b></p>
-                <ul>
-                    <li>The ability to use "ChickenChunk" Chunk-Loaders</li>
-                    <li>The ability to use Mystcraft</li>
-                    <li>The ability to use RF-Tools</li>
-                    <li>A Patron Badge in the chat.</li>
-                </ul>
-            </div>
-        </div>
         <p></p>
 
         @if(\Auth::user()->patron_active)

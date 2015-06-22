@@ -28,17 +28,15 @@
                     <div class="panel-heading">PvP Rules</div>
                     <div class="panel-body">
                         <ul>
-                            <li>Do not complain about being killed. This is a pvp server, so people will try and kill you.</li>
-                            <li>If you are killed, do not ask staff to get your items back. You will be told no.</li>
-                            <li>Consistent harassment is not allowed. Harassment is when you repeatedly kill someone  over and over again.</li>
-                            <li>The killer is not obligated to give you your items back. Ask them politely or take revenge. It's up to you.</li>
+                            <li>This is a pvp server, so people will try and kill you. But, </li>
+                            <li>If you want to fight someone, both parties have to agree on the fight. Otherwise it is counted as murder and you will get banned.</li>
                             <li>Traps in or around public areas are not allowed. Public areas include but are not limited to: shops (not necessarily your own),  public xp/mob farms, public roads. Using any method to kill players in public areas will result in a ban.</li>
                             <li>The Town is a public area and completely pvp free.</li>
-                            <li>Traps around your home (if they are not near public areas) are allowed.</li>
+                            <li>Traps around your home (if they are not near public areas) are allowed. Entering someones house is at your own risk.</li>
+                            <li>It is completely forbidden to steal from someone or destroy items and other things which do not belong to you.</li>
                         </ul>
                     </div>
                 </div>
-
 
                 <div class="panel panel-default">
                     <div class="panel-heading">Farms and Mining</div>

@@ -27,13 +27,9 @@
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li class="{{ HTML::set_active('info/mumble/info') }}"><a href="{{ url('info/mumble/info') }}">Mumble</a></li>
                         <li class="divider"></li>
-                        <li class="dropdown-submenu {{ HTML::set_active('info/ftbinfinity/info') }}">
-                            <a tabindex="-1" href="{{ url('info/ftbinfinity/info') }}">FTB Infinity</a>
-                            <ul class="dropdown-menu">
-                                <li class="{{ HTML::set_active('info/ftbinfinity/info') }}"><a href="{{ url('info/ftbinfinity/info') }}">Info</a></li>
-                                <li class="{{ HTML::set_active('info/ftbinfinity/rules') }}"><a href="{{ url('info/ftbinfinity/rules') }}">Rules</a></li>
-                            </ul>
-                        </li>
+                        <li class="dropdown-header">FTB Infinity</li>
+                        <li class="{{ HTML::set_active('info/ftbinfinity/info') }}"><a href="{{ url('info/ftbinfinity/info') }}">Info</a></li>
+                        <li class="{{ HTML::set_active('info/ftbinfinity/rules') }}"><a href="{{ url('info/ftbinfinity/rules') }}">Rules</a></li>
                     </ul>
                 </li>
 
