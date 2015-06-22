@@ -9,6 +9,7 @@
                 <h1>Season 2: FTB Infinity</h1>
 
                 <p>Start am 22. Juni 2015 - 20:00 Uhr</p>
+                <p>Join the <a href="{{ url('info/mumble/info') }}">Mumble-Server</a> for voice chat!</p>
             </div>
         </div>
 
