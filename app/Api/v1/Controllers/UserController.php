@@ -36,8 +36,7 @@ class UserController extends APIController {
     public function index(Request $request)
     {
 
-
-        $users = User::orderBy('email');
+        $users = User::orderBy('email')->paginate(100);
 
         return $this->respondWithPagination($users, $this->userTransformer->transformCollection($users->all()));
 
@@ -52,7 +51,7 @@ class UserController extends APIController {
     public function patrons(Request $request)
     {
 
-        $users = User::where('patron_active', '=', '1')->orderBy('email');
+        $users = User::where('patron_active', '=', '1')->orderBy('email')->paginate(100);
 
         return $this->respondWithPagination($users, $this->userTransformer->transformCollection($users->all()));
 
