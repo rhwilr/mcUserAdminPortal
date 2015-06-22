@@ -37,9 +37,7 @@ class UserController extends APIController {
     {
 
 
-        $limit = $request->get('limit') || $request->get('limit') < 25 ? $request->get('limit') : 25;
-
-        $users = User::orderBy('email')->paginate($limit);
+        $users = User::orderBy('email');
 
         return $this->respondWithPagination($users, $this->userTransformer->transformCollection($users->all()));
 
@@ -54,9 +52,7 @@ class UserController extends APIController {
     public function patrons(Request $request)
     {
 
-        $limit = $request->get('limit') || $request->get('limit') < 25 ? $request->get('limit') : 25;
-
-        $users = User::where('patron_active', '=', '1')->orderBy('email')->paginate($limit);
+        $users = User::where('patron_active', '=', '1')->orderBy('email');
 
         return $this->respondWithPagination($users, $this->userTransformer->transformCollection($users->all()));
 
