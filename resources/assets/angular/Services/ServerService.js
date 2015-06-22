@@ -6,6 +6,10 @@ app.factory('ServersApi', function($resource){
             'online': {
                 method:'GET',
                 url: "/api/v1/server/:id/online"
+            },
+            'updateWhitelist': {
+                method:'GET',
+                url: "/api/v1/server/:id/updateWhitelist"
             }
         });
     });

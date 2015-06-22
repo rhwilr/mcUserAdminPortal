@@ -15,6 +15,12 @@ app.controller("ServerDetailCtrl", function($scope, $state, $stateParams, $filte
 
     };
 
+    $scope.whitelist = function () {
+        ServersApi.updateWhitelist({id: $scope.resource.id}, function (data) {
+        });
+
+    };
+
 
 
 });
