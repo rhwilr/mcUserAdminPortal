@@ -6,7 +6,7 @@ use rhwilr\mcUserAdminPortal\Models\Server;
 use Illuminate\Contracts\Bus\SelfHandling;
 use rhwilr\mcUserAdminPortal\Classes\Rcon;
 
-class ActivateSubscription extends Command implements SelfHandling {
+class ActivateMember extends Command implements SelfHandling {
 
 	protected $minecraft_username;
 	/**
@@ -30,7 +30,7 @@ class ActivateSubscription extends Command implements SelfHandling {
 		foreach($servers as $server)
 		{
 			$rcon = new Rcon($server);
-			$rcon->activate_patron($this->minecraft_username);
+			$rcon->activate_member($this->minecraft_username);
 		}
 	}
 

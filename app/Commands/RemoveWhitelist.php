@@ -6,7 +6,7 @@ use rhwilr\mcUserAdminPortal\Models\Server;
 use Illuminate\Contracts\Bus\SelfHandling;
 use rhwilr\mcUserAdminPortal\Classes\Rcon;
 
-class ActivateSubscription extends Command implements SelfHandling {
+class RemoveWhitelist extends Command implements SelfHandling {
 
 	protected $minecraft_username;
 	/**
@@ -30,7 +30,7 @@ class ActivateSubscription extends Command implements SelfHandling {
 		foreach($servers as $server)
 		{
 			$rcon = new Rcon($server);
-			$rcon->activate_patron($this->minecraft_username);
+			$rcon->whitelist_remove_player($this->minecraft_username);
 		}
 	}
 

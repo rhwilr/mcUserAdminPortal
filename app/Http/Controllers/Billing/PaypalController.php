@@ -63,10 +63,10 @@ class PaypalController extends Controller {
 				$item_1->setName('30 Day Patron') // item name
 				->setCurrency('CHF')
 					->setQuantity(1)
-					->setPrice('10');
+					->setPrice('8');
 
 				$amount->setCurrency('CHF')
-					->setTotal(10);
+					->setTotal(8);
 
 				$patron_plan = '30 Day Patron';
 				$plan_ends_at = Carbon::now()->addDays(30);
@@ -76,10 +76,10 @@ class PaypalController extends Controller {
 				$item_1->setName('60 Day Patron') // item name
 				->setCurrency('CHF')
 					->setQuantity(1)
-                    ->setPrice('16');
+                    ->setPrice('14');
 
 				$amount->setCurrency('CHF')
-                    ->setTotal(16);
+                    ->setTotal(14);
 
 				$patron_plan = '60 Day Patron';
 				$plan_ends_at = Carbon::now()->addDays(60);
@@ -89,29 +89,17 @@ class PaypalController extends Controller {
 				$item_1->setName('90 Day Patron') // item name
 				->setCurrency('CHF')
 					->setQuantity(1)
-                    ->setPrice('21');
+                    ->setPrice('18');
 
 				$amount->setCurrency('CHF')
-                    ->setTotal(21);
+                    ->setTotal(18);
 
 				$patron_plan = '90 Day Patron';
 				$plan_ends_at = Carbon::now()->addDays(90);
 
 				break;
-			case 'vip':
-				$item_1->setName('90 Day VIP') // item name
-				->setCurrency('CHF')
-					->setQuantity(1)
-					->setPrice('35');
-
-				$amount->setCurrency('CHF')
-					->setTotal(35);
-
-				$patron_plan = '90 Day VIP';
-				$plan_ends_at = Carbon::now()->addDays(90);
-
-				break;
 			default:
+				return abort(500);
 				break;
 		}
 

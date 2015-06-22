@@ -22,4 +22,6 @@ Route::group(['prefix' => 'api/v1'], function()
     Route::match(['put', 'patch'],'user/{id}/minecraft', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@updateMinecraft');
     Route::match(['get'], 'user/patrons', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController@patrons');
     Route::resource('user', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\UserController',['except' => ['create', 'edit', 'update']]);
+
+    Route::controller('rules', '\rhwilr\mcUserAdminPortal\Api\v1\Controllers\RulesController');
 });

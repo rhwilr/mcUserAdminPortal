@@ -30,7 +30,7 @@ class DeactivateSubscription extends Command implements SelfHandling {
 		foreach($servers as $server)
 		{
 			$rcon = new Rcon($server);
-			$rcon->deactivate_player($this->minecraft_username);
+			$rcon->deactivate_patron($this->minecraft_username);
 		}
 	}
 

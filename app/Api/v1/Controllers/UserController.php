@@ -18,7 +18,7 @@ class UserController extends APIController {
 
     /**
      * ServerController constructor.
-     * @param $serverTransformer
+     * @param $userTransformer
      */
     public function __construct(\rhwilr\mcUserAdminPortal\Api\v1\Transformers\UserTransformer $userTransformer)
     {
@@ -36,7 +36,8 @@ class UserController extends APIController {
     public function index(Request $request)
     {
 
-        $limit = $request->get('limit')||$request->get('limit')<25?$request->get('limit'):25;
+
+        $limit = $request->get('limit') || $request->get('limit') < 25 ? $request->get('limit') : 25;
 
         $users = User::orderBy('email')->paginate($limit);
 
