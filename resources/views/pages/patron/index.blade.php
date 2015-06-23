@@ -16,8 +16,8 @@
                         <b>With a Patron Membership you get some nice extras:</b>
                         <ul>
                             <li>The ability to use Chunk-Loaders from the Chicken-Chunk Mod</li>
-                            <li>Build your own Mystcraft dimentions</li>
-                            <li>Build your own RF-Tools dimentions</li>
+                            <li>Build your own Mystcraft dimensions</li>
+                            <li>Build your own RF-Tools dimensions</li>
                             <li>A Patron Badge in the chat.</li>
                             <li>A warm feeling in your heart for supporting the server.</li>
                         </ul>

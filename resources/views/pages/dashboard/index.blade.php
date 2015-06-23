@@ -55,7 +55,7 @@
                     </table>
                     <div cg-busy="myPromise"></div>
                     <div class="alert alert-dismissible alert-info">
-                        Add your your Minecraft-Username in your <a href="/profile#/minecraft" class="alert-link">Profile</a> to get whitelisted.
+                        Add your Minecraft-Username in your <a href="/profile#/minecraft" class="alert-link">Profile</a> to get whitelisted.
                     </div>
                 </div>
             </div>
