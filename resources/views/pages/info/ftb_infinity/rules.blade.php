@@ -39,6 +39,16 @@
                 </div>
 
                 <div class="panel panel-default">
+                    <div class="panel-heading">Pranks</div>
+                    <div class="panel-body">
+                        <ul>
+                            <li>Pranks are allowed, as long as no permanent damage is done to the other player or his buildings and items.</li>
+                            <li>Always leave a sign with your name, stating yourself as the perpetrator.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
                     <div class="panel-heading">Farms and Mining</div>
                     <div class="panel-body">
                         <ul>
