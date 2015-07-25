@@ -6,8 +6,8 @@
 
         <div class="col-md-12">
             <div class="jumbotron">
-                <h1>Season 2: FTB Infinity</h1>
-
+                <h1>Season 2: FTB Infinity <small>Current version: 1.9.0</small></h1>
+                
                 <p>Start am 22. Juni 2015 - 20:00 Uhr</p>
                 <p>Join the <a href="{{ url('info/mumble/info') }}">Mumble-Server</a> for voice chat!</p>
             </div>
