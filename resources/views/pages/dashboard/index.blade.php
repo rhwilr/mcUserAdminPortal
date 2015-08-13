@@ -75,7 +75,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Info / Known Bugs</div>
                 <div class="panel-body">
-                    <p>Currently it is not possible to enter the nether. This is a Bug in one of the mods and will be fixed soon. The Developer knows about it and is working on it.</p>
+                    <p>There are absolutely no bugs.... ;)</p>
                 </div>
             </div>
 
