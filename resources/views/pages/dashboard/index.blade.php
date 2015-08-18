@@ -6,7 +6,7 @@
 
         <div class="col-md-12">
             <div class="jumbotron">
-            	<h1>NEW: ARK: Survival Evolved<small>More Infos soon</small></h1>
+            	<h1>NEW: ARK: Survival Evolved<small>rhwilr.ch</small></h1>
                 <h3>Season 2: FTB Infinity <small>Version: 1.9.0</small></h3>
                 <p>Join the <a href="{{ url('info/mumble/info') }}">Mumble-Server</a> for voice chat!</p>
             </div>
